@@ -1,0 +1,726 @@
+﻿l_german:
+ # MAR_l_english
+ # By Metallichydra
+ 
+ astral_rift_MAR_museum_of_all: "Museum of All"
+ 
+ MAR_museum_rift_event.1.name: "Museum Entrance"
+ MAR_museum_rift_event.1.desc.default: "We have arrived at what seems like a museum entrance.\n\nAt least that's what the grand sign says above the entrance of the building we have found ourselves in fron of says, strangely in our own language.\n\nOur exploration team reports that they have trouble perceiving anything else, and are unable to provide us with a description of the surrounding landscape past it being 'flat' and 'unimportant'.\n\nConversely, the museum looks interesting, and a ticket agent can be seen through the glass doors, awaiting our arrival."
+ MAR_museum_rift_event.1.a: "Approach the ticket agent."
+ 
+ MAR_museum_rift_event.2.name: "The Museum of All"
+ MAR_museum_rift_event.2.information.desc.gestalt: "§H'The Museum of All'§! is the answer.\n\nA museum that contains all historical events and art from every age and empire, placed outside time and space.\n\n§H'I'll take you to the [leader.owner.GetName] section. I'm closing soon, so please do hurry up.'§!"
+ MAR_museum_rift_event.2.information.desc.default: "$MAR_museum_rift_event.2.information.desc.gestalt$"
+ MAR_museum_rift_event.2.desc.gestalt: "The ticket agen greeted us with much warmth, even addressing us as one entity despite clearly being an individual itself. It then promptly asked if we have our ticket, though also provided us the option to buy new ones if we haven't bought any yet."
+ MAR_museum_rift_event.2.desc.default: "The ticket agent greeted us with much warmth, appearing to know us already. It promptly asked us if we have our tickets, as without tickets we cannot enter."
+ 
+ MAR_museum_rift_event.2.a: "We will pay."
+ MAR_museum_rift_event.2.b: "Ask about this museum."
+ MAR_museum_rift_event.2.c: "Sorry, we can't afford this."
+ 
+ MAR_museum_rift_event.3.name: "A Choice"
+ MAR_museum_rift_event.3.information.desc: ""
+ MAR_museum_rift_event.3.desc: "The ticket agent accepted the payment, then led us into the museum.\n\n[Leader.GetName] noted that [Leader.GetHeShe] recognized some of the artifacts as historical objects of our empire's past.\n\nOur tour guide has now let us to an intersection with three doorways, each leading to a different part of the museum.\n\n§H'As I said, we're closing soon, so we might only have time for you to see one section. So I'll skip the usual guided tour and let you choose which section you want to see.'§!"
+ 
+ MAR_museum_rift_event.3.a: "The 'Ancient Heroes' Section."
+ MAR_museum_rift_event.3.b: "The 'Scientific Breakthroughs' Section."
+ MAR_museum_rift_event.3.c: "The 'Major Battles' Section."
+ 
+ MAR_museum_rift_event.4.name: "Ancient Heroes"
+ MAR_museum_rift_event.4.information.desc.gestalt: "Our first assumption was that we would be able to see historical moments from our past, but instead we're greeted with a painted picture of [Leader.getName] standing atop the corpse of an alien we have never seen before.\n\nThe plague underneath states that this is 'Commander' [Leader.GetName] who secured victory against all odds. [Leader.getName] believes this is indeed true, or will become true in the future."
+ MAR_museum_rift_event.4.information.desc.default: "$MAR_museum_rift_event.4.information.desc.gestalt$"
+ MAR_museum_rift_event.4.desc.gestalt: "$MAR_museum_rift_event.4.desc.gestalt$"
+ MAR_museum_rift_event.4.desc.default: "Our tour guide leads us into a room with many oil-paintings lining the walls, each one showing a picture of various [Explorer.GetSpeciesNamePlural] in dramatic poses, though most standing atop their slain enemies while bathed in bright light coming from the sky above.\n\nIt's good quality artwork, but nothing noteworthy."
+ 
+ MAR_museum_rift_event.4.a: "Destiny Awaits!"
+ MAR_museum_rift_event.4.a.tt: "§Y[Leader.GetName]§! becomes an Commander"
+ MAR_museum_rift_event.4.b: "We can't spare [Leader.GetHisHer] genius!"
+ MAR_museum_rift_event.4.c: "Strange."
+ 
+ MAR_museum_rift_event.5.name: "Superior Technology"
+ MAR_museum_rift_event.5.information.desc: "Upon being led into the room, we're met with the sight of blueprints, replica's and other details of various inventions that, according to our tour guide, will be invented in our empire's future.\n\n[Leader.GetName] managed to take some pictures before our tour guide concluded that closing time was about now and we were forced to leave."
+ MAR_museum_rift_event.5.desc: "Upon being led into the room, we're met with the sight of blueprints, replica's and other details of various inventions that are decades ahead of our own.\n\n[Leader.GetName] managed to take some pictures before our tour guide concluded that closing time was about now and we were forced to leave."
+ 
+ MAR_museum_rift_event.5.a: "Splendid!"
+ 
+ MAR_museum_rift_event.6.name: "Ancient Battle"
+ MAR_museum_rift_event.6.common.desc: "Our tour guide has taken us to the section we asked for, and upon arriving we were met with a large holographic display of our galaxy.\n\nIt is interactive, and with a few presses on some buttons, our tour guide brigns up a video of a large battle."
+ MAR_museum_rift_event.6.cloaking.desc: "$MAR_museum_rift_event.6.common.desc$. The ships are very clearly of [explorer.GetAdj] design, and it appears that they are fighting against fleets from The [event_target:MAR_museum_rival.GetName].\n\nThe battle itself looks at first to be in favor of the [event_target:MAR_museum_rival.GetAdj] forces, but then suddenly new [explorer.GetAdj] appear out of nowhere, using advanced cloaking technology. The element of surprise proves to be very effective, and allows our future forces to win the battle.\n\n[Leader.GetName] has compiled a throughout report of the battle and obtained data, which will help improve our own cloaking abilities."
+ MAR_museum_rift_event.6.valor.desc: "$MAR_museum_rift_event.6.common.desc$. The ships are very clearly of [explorer.GetAdj] design, and it appears that they are fighting against fleets from The [event_target:MAR_museum_rival.GetName].\n\nThe battle itself seems to be a desperate last stand, but in the end our forces emerge victorious.\n\n[Leader.GetName] has compiled a throughout report of the battle and obtained data, which will help improve our own combat abilities."
+ MAR_museum_rift_event.6.bulwark.desc: "$MAR_museum_rift_event.6.common.desc$. The ships are very clearly of [explorer.GetAdj] design, and it appears that they are fighting against fleets from The [event_target:MAR_museum_rival.GetName].\n\nThe battle itself seems to be a border battle. Our future forces appear to be outnumbered, but a tactical retreat allows the local starbase to join the fray and overwhelm the enemy with superior artillary.\n\n[Leader.GetName] has compiled a throughout report of the battle and obtained data, which will help improve our own combat abilities."
+ MAR_museum_rift_event.6.sacrifice.desc: "$MAR_museum_rift_event.6.common.desc$. The ships are very clearly of [explorer.GetAdj] design, and the tactics employed appears to be a refined version of our own."
+ MAR_museum_rift_event.6.information.desc.default: "$MAR_museum_rift_event.6.common.desc$. The ships are very clearly of [explorer.GetAdj] design, and the tactics employed appears to be a refined version of our own."
+ MAR_museum_rift_event.6.desc: "$MAR_museum_rift_event.6.common.desc$. The ships use advanced weaponry, decades ahead of our own, though the tactics employed aren't much different, merely slight improvements to the galactic standard."
+ 
+ MAR_museum_rift_event.6.a: "Could be useful training data."
+ MAR_museum_rift_event.6.b: "Hurray for future us!"
+ MAR_museum_rift_event.6.c: "Hurray for future us!"
+ MAR_museum_rift_event.6.d: "Hurray for future us!"
+ MAR_museum_rift_event.6.e: "Hurray for future us!"
+ 
+ MAR_museum_cloaking_modifier: "Ambush Tactics"
+ MAR_museum_hull_modifier: "Last Stand Tactics"
+ MAR_museum_charge_modifier: "Glorious Charge Tactics"
+ MAR_museum_sacrifice_modifier: "Last Stand"
+ 
+ opinion_MAR_future_enemy: "Future Enemy"
+ 
+ # Starless Skies
+ astral_rift_MAR_starless_skies: "Starless Skies"
+ 
+ MAR_starless_rift_event.1.name: "Starless Skies"
+ MAR_starless_rift_event.1.desc: "Our sphere have arrived on the surface of a planet not dissimilar to that of a regular continental world, though there is little light. In fact, the only light is that of the local flora, a type of tree with dimly glowing blue leaves, as well as the light we brought with us. The skies above are pitch black, and preliminary scans pick up no signs of photons."
+ MAR_starless_rift_event.1.a: "Activate heavy scanners."
+ MAR_starless_rift_event.1.b: "Sample the local flora."
+ 
+ MAR_starless_rift_event.5.name: "Cavernous World"
+ MAR_starless_rift_event.5.desc: "The scanners reveal that we are, in fact, not on the surface. Above us something blocks our scanner from reaching the void, waves bouncing back to us. The signal is reflected almost perfectly, revealing that the structure's surface is almost perfectly smooth. This smoothness, however, also means we don't recieve much information on the composition of the cavern roof."
+ MAR_starless_rift_event.5.a: "Fly up and take a closer look."
+ MAR_starless_rift_event.5.b: "Use a laser-based reckon system."
+ MAR_starless_rift_event.5.c: "Sample the local flora."
+ 
+ MAR_starless_rift_event.10.name: "Something's Up There"
+ MAR_starless_rift_event.10.desc: "The journey upwards was beautiful, with the bioluminescent trees underneath slowly fading away, yet the distance gained also slowly turned the points of lights into a sea that seemingly stretches across the whole planet, or at least as far as we can see.\n\nOur sensors have not picked up anything from the surface, but now, as our sphere approaches the ceiling, our scanners pointed upwards start picking up... movements?"
+ MAR_starless_rift_event.10.a: "Continue."
+ MAR_starless_rift_event.10.b: "Go Back Down!"
+ 
+ MAR_starless_rift_event.15.name: "The Beast"
+ MAR_starless_rift_event.15.desc: "The Darkness above moves, the sky itself shifting and coiling itself, with sparse dots of dim lights appearing behind it. Our scanners go haywire, showing that what we had assumed to be a cavernal structure of sorts is actually a gigantic creature, its outline now visible against the canvas of stars. A single bright point of light moves across the black creature and fixes itself like an eye on our team of explorers."
+ MAR_starless_rift_event.15.a: "Observe It."
+ MAR_starless_rift_event.15.b: "Leave! Leave!"
+ 
+ MAR_starless_rift_event.20.name: "Back To Safety"
+ MAR_starless_rift_event.20.desc: "We quickly got to pulling back the sphere out the rift with the anchor. The beast's gutteral hissing could be heard as it chased the suddenly fleeing visitor, though [Leader.GetName] and [Leader.GetHisHer] team managed to get though the rift in a timely manner and without casualties."
+ MAR_starless_rift_event.20.a: "Ok."
+ 
+ MAR_starless_rift_event.21.name: "A Feast for the Beast."
+ MAR_starless_rift_event.21.desc: "Darkness plunged forward toward the sphere, and wraps around it. The last transmission from the exploration team was that of [Leader.GetName] frantically telling us to 'Hurry up and pull us out!'. Then our signal is cut, and we manage to pull out only a severed chain."
+ MAR_starless_rift_event.21.a: "$UNFORTUNATE$"
+ 
+ MAR_starless_rift_event.25.name: "Supermassive Creature"
+ MAR_starless_rift_event.25.desc: "The creature watched our team for a few moments, then slithered forward.\n\n[Leader.GetName] reports that the creature is massive, almost impossibly so, though the beast appeared more curious than hostile.\n\nSuddenly our sphere's lights dimmed, though nothing is wrong with our electrical supply system."
+ MAR_starless_rift_event.25.a: "Turn off the lights."
+ MAR_starless_rift_event.25.b: "Reroute more power to the lights."
+ 
+ MAR_starless_rift_event.30.name: "Lost Interest"
+ MAR_starless_rift_event.30.desc: "The creature let out a loud noise, then after a nerve-wracking moment of intense silence on the crews part, it slithered back into the sky, once again covering it, plunging the world into darkness.\n\n[Leader.GetName] is unsure what the creature does, but is not eager to continue studies."
+ MAR_starless_rift_event.30.a: "Better leave while we can."
+ 
+ MAR_starless_rift_event.35.name: "Light-Eater"
+ MAR_starless_rift_event.35.desc: "The creature slithered closer, wrapping darkness around our sphere. Despite the massive size, it carefully cradles our sphere with its wings.\n\nThis close, we can determine that the light is not reflected upon its hide, and [Leader.GetName] sumises that the creature absorbs light and converts it into energy, hence its interest in our sphere."
+ MAR_starless_rift_event.35.a: "Scan the composition of its hide."
+ 
+ MAR_starless_rift_event.40.name: "The Darkest Dark"
+ MAR_starless_rift_event.40.desc: "Initial scans show that the creature's hide, as suspected, absorb light. More specifically, it not only absorbs all wavelengths in the visible spectrum, it absorbs ALL wavelengths, making it perfect for hiding from photon-based reflection scanners.\n\nReplicating its structure with artificial materials should allows us to enhance our cloaking capabilities."
+ MAR_starless_rift_event.40.a: "Excellent."
+ 
+ MAR_starless_rift_event.50.name: "Lack of Reflection"
+ MAR_starless_rift_event.50.desc: "Despite the initial scans showing us to be in a cavern-like structure, the laser is not reflected by the ceiling.\n\n[Leader.GetName] suggest the sphere's scanners may not be working, or perhaps the underlying rules of physics of this universe may not work in the same way as our own."
+ MAR_starless_rift_event.50.a: "Fly up and take a closer look."
+ MAR_starless_rift_event.50.b: "Set the laser to maximum intensity."
+ 
+ MAR_starless_rift_event.55.name: "A Living Roof"
+ MAR_starless_rift_event.55.desc: "At first nothing happens, then the darkness is slowly burned away, making way for bright light that leaks out of the roof. It looks like it is liquid light. Then our scanners pick up movements from the ceiling.\n\nIn conjuction with this, a loud screech is heard and the sky moves, easily observable due to the liquid light leaking out.\n\nThe roof - no, creature moves and our scanners show that it is moving towards our sphere."
+ MAR_starless_rift_event.55.a: "Pull the anchor!"
+ MAR_starless_rift_event.55.b: "Continue to use the laser."
+ 
+ MAR_starless_rift_event.65.name: "The Fall"
+ MAR_starless_rift_event.65.desc: "More liquid light started leaking out as the creature descended, new wounds opening up. The creature tumbled down, the enourmous body making way for the star-filled sky behind it. With a ear-splitting screech the creature tumbled down to the ground. The forest around us is crushed, and the earth shook upon the impact"
+ MAR_starless_rift_event.65.a: "Sample its blood."
+ MAR_starless_rift_event.65.b: "Cut off its head."
+ 
+ MAR_starless_rift_event.66.name: "Loss"
+ MAR_starless_rift_event.66.desc: "The creature descended upon our sphere and enveloped it in darkness.\n\nA few jumbled words that were suddenly and abruptly cut off were transmitted back through the rift.\n\nWe have recieved no further communications from our sphere, and [Leader.GetName] is assumed to have been killed in action."
+ MAR_starless_rift_event.66.a: "May [Leader.GetHeShe] rest in peace."
+ 
+ MAR_starless_rift_event.70.name: "Shining Blood"
+ MAR_starless_rift_event.70.desc: "After throughout analysis, [Leader.GetName] has determined the blood's bioluminescent properties to be linked to a specific gene appended to the end of the creature's DNA. It's nothing much impressive beyond the apparent brightness of it and the fact that it appears to be compatible with our own.\n\nReplication should be possible, and will allow for use in the medical industry with some interesting cosmetic effects."
+ MAR_starless_rift_event.70.a: "Let's splice it into our DNA!"
+ MAR_starless_rift_event.70.b: "Let's just hold onto it for now."
+ 
+ MAR_starless_rift_event.70.a.tooltip: "Unlocks the $trait_MAR_lightblood$ trait.\nModify the [Explorer.GetSpeciesName] species with the $trait_MAR_lightblood$ trait."
+ MAR_starless_rift_event.70.b.tooltip: "Unlocks the $trait_MAR_lightblood$ trait."
+ 
+ MAR_starless_rift_event.75.name: "Glory Ahead"
+ MAR_starless_rift_event.75.desc: "It took some searching, but [Leader.GetName] and [Leader.GetHisHer] team finally found the best cutoff locations to take off its head.\n\nThey then used the inbuilt excavation tools in the sphere to cut it off.\n\nIt has a single dull eye which glows faintly in the dark, even now, though the scales are unobservable, as they appear to absorb all known wavelengths of light.\n\nIt will now serve as a reminder of the strength of the [Explorer.GetName]."
+ MAR_starless_rift_event.75.a: "Good."
+ 
+ MAR_starless_rift_event.80.name: "Reacting To The Light"
+ MAR_starless_rift_event.80.desc: "Our initial examinations and test revealed that the trees leaves react to light, such as the ones they themselves emit, though after a few attempts with different types of wavelengths, we have determined the biggest reactions come from those where we imitate wavelengths from distant stars, which is surprising considering the lack of stars.\n\n[leader.GetName] has theorized that red- or blue-shifting the wavelengths could provide better results."
+ MAR_starless_rift_event.80.a: "Use Red-shfited wavelengths."
+ MAR_starless_rift_event.80.b: "Use Blue-shifted wavelengths."
+ 
+ MAR_starless_rift_event.81.name: "Snuffed Lights"
+ MAR_starless_rift_event.81.desc: "At first the leaves started uncurling, revealing themselves to actually be stalks, with hidden leaves unfurling and becoming fronds.\n\nHowever, after a very short time they began crumbling before out very eyes.\n\nThen the tree seemed to enter an inert stage where the bioluminescent leaves ceased to emit any light.\nAny nearby trees also began this process plunging the world into even more darkness than it was. One of our team described it almost like a 'city running out of power and shutting down'.\n\n[Leader.GetName] sumises it is a defense mechanism to avoid contamination of the whole forest. While interesting, this unfortunately concludes our studies."
+ MAR_starless_rift_event.81.a: "Ok."
+ 
+ MAR_starless_rift_event.85.name: "Lightbloom"
+ MAR_starless_rift_event.85.desc: "When shining red-shifted wavelengths on the leaves, they immediately began to glow more brightly with small flowers blooming at the end of every branch.\n\nThe whole forest quickly became almost as bright as day.\n\n[Leader.GetName] suspects that some event on this planet involving red-shifted light happens regularly, which would then trigger the blooming, and subsequently dispersal of seeds."
+ MAR_starless_rift_event.85.a: "Sample the flowers."
+ MAR_starless_rift_event.85.b: "Observe the flowers."
+ 
+ MAR_starless_rift_event.90.name: "Seeds of Light"
+ MAR_starless_rift_event.90.desc: "The flowers we have sampled quickly lost their brightness, though a faint glow from within reveals the leaves act as the trees means to spread: Inside each leaf is a tiny seed, its leaves perfect for being snatched on the wind and carried away so that a new tree can take root far away.\n\n[Leader.GetName] has collected some of these seeds, which will allow us to plant our trees own back home."
+ MAR_starless_rift_event.90.a: "Splendid!"
+ 
+ MAR_starless_rift_event.90.a.tooltip: "Unlocks the $MAR_plant_lighttrees$ decision."
+ 
+ MAR_starless_rift_event.95.name: "Life's So Short"
+ MAR_starless_rift_event.95.desc: "The flowers continued to shine until the leaves fell off. Where they landed, they continue to shine for some time, though ultimately the light faded.\n\n[Leader.GetName] says that the observation has inspired [Leader.GetHimHer] to live life while [Leader.GetHimHer] can, and has now returned with a new appreciation for existence."
+ MAR_starless_rift_event.95.a: "Ok."
+ 
+ # ("The quickly fading life is the universes reminder that we have precious little time."), ready to explore more realities beyond our own"
+ 
+ # Modifiers
+ MAR_starless_scales: "Light-Absorbant Plating"
+ MAR_starless_scales_desc: "Replicating the scales of the light-eating beast has enabled us improve our cloaking capabilities."
+ 
+ MAR_starless_scales_no_first_contact: "Light-Absorbant Plating"
+ MAR_starless_scales_no_first_contact_tt: "Surely this could be useful..."
+ MAR_starless_scales_no_first_contact_desc: "Replicating the scales of the light-eating beast has proved to be of no benefit to our empire."
+ 
+ r_MAR_lightbeast_head: "Sky Monster's Head"
+ r_MAR_lightbeast_head_desc: "The head of a beast of indredible size. Its scales absorb light of all known wavelengths, making it nearly impossible to detect with photon-based detectors."
+ relic_MAR_lightbeast_head_active: ""
+ 
+ MAR_lightbeast_cloaking: "Sky Monster's Guile"
+ MAR_lightbeast_encryption: "Sky Monster's Guile"
+ 
+ decision_MAR_lightplanting: "Plant Lightseeds"
+ decision_MAR_lightplanting_desc: "Introduce bioluminescent trees from the starless dimension into this ecosystem."
+ 
+ MAR_lightbuds: "Lighttrees"
+ MAR_lightbuds_desc: "Bioluminescent vegetation from another dimension, thankfully it requires special care for it to grow and will not pose a threat to the existing ecosystem."
+ 
+ # The Clockstopper
+ 
+ astral_rift_MAR_clockstopper: "The Clockstopper"
+ 
+ MAR_clockstopper_rift_event.1.name: "Divine Time"
+ MAR_clockstopper_rift_event.1.desc: "The place we have arrived at appears to be a structure made by a primitive civilization: A large place of divine worship, with many rows of seats all facing an altar of worship, all made of rock that seems to have been cruedely carved to their creators needs.\n\nStrangely, however, on the altar is not a divine figure in the likeness of its creators.\n...Unless of course its creators are gigantic hourglasses.\n\nStrangely, despite the disrepair of the structure, the hourglass has yet to run out."
+ MAR_clockstopper_rift_event.1.a: "Examine the hourglass."
+ #
+ #MAR_clockstopper_rift_event.5.name: ""
+ #MAR_clockstopper_rift_event.5.desc: "The Hourglass is a simple one, filled with black sand that slowly runs out. Furthermore, it appeares to be firmly attached to a metal fixation in the altar, hallmarks of a more advanced civilization."
+ #MAR_clockstopper_rift_event.5.a: "Watch it."
+ MAR_clockstopper_rift_event.1.b: "Dismantle it and examine the sand."
+ 
+ MAR_clockstopper_rift_event.10.name: "Time Slipping By"
+ MAR_clockstopper_rift_event.10.desc.default: "The hourglass is big, too big for most species to properly use it on their own, though a large group of strong speciments could potentially do it, although the bottom of the hourglass has been fastened to a metal fixation in the altar, preventing it from being removed without the aid of tools.\n\nThe sand itself is black, and appears to be crystalline formations of very small grains, most likely ground-up silicate.\n\nIt has almost run out."
+ MAR_clockstopper_rift_event.10.desc.1: "We observed the sand as it slowly ran out.\n\nThen, when it was almost there, metal against metal screeched as something scraped against each other.\n\nA mechanism underneath the altar slowly began moving the hourglass upwards into the air and metallic mechanical arms were extened from hidden compartments in the wall, and attached to its sides while simultaniously unattaching it from the altar. Then, unbelievably fast, the hourglass was flipped on its head and reattached to the altar.\n\nIt then continued to run out of time as if nothing had ever happened."
+ MAR_clockstopper_rift_event.10.desc.2: "Once again, the sand slowly ran out, though nothing happened beyond the mechanism resetting everything.\n\nA deep scan of the mechanism itself revealed it to be driven by a recursive loop where the falling sand generates energy for the mechanism, despite this being in violation of several laws of physics, although how exactly this works would require a throughout examination of the individual parts."
+ MAR_clockstopper_rift_event.10.desc.3: "Not unexpectedly, the mechanism once again made sure the hourglass did not run out, instead resetting it the second before the last grain entered the lower half.\n\n[Leader.GetName] urges us to do something more productive than observe the same thing over and over again."
+ 
+ MAR_clockstopper_rift_event.10.a: "Try flipping it on its head."
+ 
+ MAR_clockstopper_rift_event.10.b.default: "Observe it."
+ MAR_clockstopper_rift_event.10.b.1: "Continue watching it."
+ MAR_clockstopper_rift_event.10.b.2: "Let's see if anything changes this time."
+ MAR_clockstopper_rift_event.10.b.3: "Maybe this time something will be different?"
+ 
+ MAR_clockstopper_rift_event.10.b.trigger_tt: "[Leader.GetName] refuses to watch it anymore, stating that 'It should be quite obvious now that this mechanism does the same thing over and over.'"
+ 
+ MAR_clockstopper_rift_event.10.c: "Dismantle it and examine the sand."
+ MAR_clockstopper_rift_event.10.d: "Dismantle it and examine the mechanism."
+ 
+ MAR_clockstopper_rift_event.11.name.default: "Black Sand"
+ MAR_clockstopper_rift_event.15.name.flipped: "Timesand"
+ MAR_clockstopper_rift_event.11.desc.unflipped: "$MAR_clockstopper_rift_event.11.desc.flipped$"
+ MAR_clockstopper_rift_event.11.desc.flipped: "As we started going through various tests, we came to realize that we could not replicate the color-changing properties, or cause death among any test subjects, even when put back into the hourglass. Whatever caused this phenomenon, it is gone now.\n\nThe sand, however, appear to have a beneficial impact on health, although tests were inconclusive on how exactly."
+ MAR_clockstopper_rift_event.11.desc.default: "The sand appears to be regular sand.\n\nNothing spectacular.\n\n[Leader.GetName] notes [Leader.GetHeShe] feels tired when holding it."
+ 
+ MAR_clockstopper_rift_event.11.a: "Ok."
+ 
+ MAR_clockstopper_rift_event.12.name: "Simple Mechanics"
+ MAR_clockstopper_rift_event.12.desc.flipped: "In spite of the strange death and mysterious sand, the mechanism itself is extremely simple, working by employing a timer that is set to an amount of time corresponding to the hourglass."
+ MAR_clockstopper_rift_event.12.desc.default: "Unfortunately the mechanism turned out to be very simple, working by using a timer that is set to activate in the same time it takes for the hourglass to nearly run out."
+ 
+ MAR_clockstopper_rift_event.12.a: "Unfortunate"
+ 
+ MAR_clockstopper_rift_event.15.name: "Out of Time"
+ MAR_clockstopper_rift_event.15.desc.default: "It was hard to first unattach the hourglass from the altar and then turn it on its head before re-attaching it, but nevertheless we managed to do it.\n\nBut not without consequences.\n\nWith most sand in the bottom half again, the sand quickly ran out, and just as the last grain fell down, one of the members of the exploration team suddenly started disentigrating.\n\nWithin seconds there was nothing left but dust swirling in the air, which quickly settled down on the floor.\n\nStrangely the sand in the hourglass is now brighter."
+ MAR_clockstopper_rift_event.15.desc.unflipped: "Upon flipping it back, the hourglass started running again, continuing as if nothing happened."
+ 
+ MAR_clockstopper_rift_event.15.a: "Unflip it! Unflip it!"
+ #MAR_clockstopper_rift_event.15.b: "Collect the sand."
+ MAR_clockstopper_rift_event.15.c: "Dismantle it and examine the sand."
+ MAR_clockstopper_rift_event.15.d: "Extract the hourglass."
+ 
+ MAR_clockstopper_rift_event.25.name: "Timestealer"
+ MAR_clockstopper_rift_event.25.desc: "The hourglass has been extracted, and already can we feel its influence.\n\nTime seems to act strange around the hourglass, and each time it is reset it turns back time in an area near it, rearranging any and all atoms and molecyles corresponding to where they were the last time it was reset.\n\nMiraciously, it avoids the desctruction or rearrangement of neural tissue required to form memories."
+ MAR_clockstopper_rift_event.25.a: "A Powerful Tool"
+ 
+ # Relic
+ r_MAR_clockstopper: "Black-Sand Hourglass"
+ r_MAR_clockstopper_desc: "Contrary to popular belief, the hourglass does not run on youth but is instead fueled by age. The rapid-aging effect it sometimes causes is merely a dischare of excess power."
+ 
+ relic_MAR_clockstopper_active: "All leaders become 10 years younger."
+ #relic_MAR_clockstopper_active: "Completes the current agenda at the cost of aging all councilors by a year."
+ 
+ MAR_clockstopper_timesand: "Strange Sand"
+ MAR_clockstopper_timesand_desc: "The molecyles making up this sand has a strange effect on time in its vicinity."
+ 
+ # The Frozen World
+ 
+ astral_rift_MAR_the_frozen_world: "The Frozen World"
+ 
+ MAR_frozen_rift_event.1.name: "A Cold Reception"
+ MAR_frozen_rift_event.1.desc: "Our sphere has arrived in what appears to be a laboratory. The temperature is low, below freezing, and various fluids have frozen solid on the floor after their containers broke.\n\nBeyond normal lab equipment there's also a terminal and a heavy-duty steel door reminiscent of a bunker door."
+ MAR_frozen_rift_event.1.a: "Turn on the terminal."
+ MAR_frozen_rift_event.1.b: "Open the door."
+ 
+ MAR_frozen_rift_event.5.common: "\n\nOnce operational, we gained access to many log files. There's also a program named 'pylons'."
+ MAR_frozen_rift_event.5.name: "Access"
+ MAR_frozen_rift_event.5.desc.volgan: "The terminal turned on, displaying the logo of the Volgan Imperium!$MAR_frozen_rift_event.5.common$\n\nThis unique opportunity presents a chance to learn even more about this ancient empire."
+ MAR_frozen_rift_event.5.desc.default: "The terminal turned on, displaying a logo we do not recognize, although the snowflake icon does allude to its purpose.$MAR_frozen_rift_event.5.common$"
+ MAR_frozen_rift_event.5.a: "Recover the files."
+ MAR_frozen_rift_event.5.b: "Open the program."
+ 
+ MAR_frozen_rift_event.6.name: "Freezing Ice"
+ MAR_frozen_rift_event.6.common: "The logs appear to be logs from cryogenic experiments, going into extreme detail on the properties of ice and its applications"
+ MAR_frozen_rift_event.6.desc.volgan: "$MAR_frozen_rift_event.6.common$.\n\nA great deal of the log's focus also appears to be on the best way to transfer heat away from ice, superfreezing it.\n\n[Leader.GetName] suggests this might have been a precursor project to The Frozen Engine."
+ MAR_frozen_rift_event.6.desc.default: "$MAR_frozen_rift_event.6.common$, though a surprising amount of it is dedicated on how to best prevent ice from melting.\n\nUnfortunately the old hardware they were stored on started breaking down due to the electrical current being carried on worn down wires."
+ MAR_frozen_rift_event.6.a: "The logs appear to be experient logs for cryogenic"
+ 
+ MAR_frozen_rift_event.10.name: "Pylons"
+ MAR_frozen_rift_event.10.desc.default: "$MAR_frozen_rift_event.10.desc.volgan$"
+ MAR_frozen_rift_event.10.desc.volgan: "The "pylons" program is very simple, sporting a few sliders that can be moved around and a screen showing 3 towers of some sort.\n\nAn "Expected temperature" and "Current temperature" is also shown. Both are currently: -40 Degrees.\n\nAdditionally there's buttons labeled 'Lower', 'Raise' and 'Initiate'."
+ MAR_frozen_rift_event.10.desc.temp: "Current Temperature: [This.Volgan_Temp]\n\nExpected Temperature: [This.Volgan_Temp]"
+ MAR_frozen_rift_event.10.a: "Initiate"
+ MAR_frozen_rift_event.10.b: "Raise"
+ MAR_frozen_rift_event.10.c: "Lower"
+ MAR_frozen_rift_event.10.b.trigger_tt: "The slider can't go any higher."
+ MAR_frozen_rift_event.10.c.trigger_tt: "The slider can't go any lower."
+ 
+ MAR_frozen_rift_event.15.name: "Transformative Knowledge"
+ MAR_frozen_rift_event.15.desc.volgan: "$MAR_frozen_rift_event.15.desc.default$"
+ MAR_frozen_rift_event.15.desc.default: "A loud rumbling sound could be heard, then after a short while the 'current temperature' changes slowly to match the one we set.\n\nA printout of the experiement is printed on the terminal, along with a blueprint on how to construct a pylon structure on frozen worlds to reach the temperature shown."
+ MAR_frozen_rift_event.15.a: "Splendid."
+ MAR_frozen_rift_event.15.b: "Well, that's useless."
+ 
+ MAR_frozen_rift_event.15.common.tt: "We can now terraform Frozen Terraforming Candidates into"
+ MAR_frozen_rift_event.15.a.arctic.tt: "$MAR_frozen_rift_event.15.common.tt$ Arctic Worlds."
+ MAR_frozen_rift_event.15.a.tundra.tt: "$MAR_frozen_rift_event.15.common.tt$ Tundra Worlds."
+ MAR_frozen_rift_event.15.a.alpine.tt: "$MAR_frozen_rift_event.15.common.tt$ Alpine Worlds."
+ MAR_frozen_rift_event.15.a.ocean.tt: "$MAR_frozen_rift_event.15.common.tt$ Ocean Worlds."
+ MAR_frozen_rift_event.15.a.continental.tt: "$MAR_frozen_rift_event.15.common.tt$ Continental Worlds."
+ MAR_frozen_rift_event.15.a.tropical.tt: "$MAR_frozen_rift_event.15.common.tt$ Tropical Worlds."
+ MAR_frozen_rift_event.15.a.savannah.tt: "$MAR_frozen_rift_event.15.common.tt$ Savannah Worlds."
+ MAR_frozen_rift_event.15.a.desert.tt: "$MAR_frozen_rift_event.15.common.tt$ Desert Worlds."
+ MAR_frozen_rift_event.15.a.arid.tt: "$MAR_frozen_rift_event.15.common.tt$ Arid Worlds."
+ MAR_frozen_rift_event.15.a.frozen.tt: "Well, that won't help us much."
+ 
+ MAR_frozen_rift_event.50.name: "Locked and Frozen."
+ MAR_frozen_rift_event.50.desc: "The door is locked, and does not budge, even when we applied much pressure. [Leader.GetName] has asked for permission to use our Sphere's lasers to cut it open so we can access the other side."
+ MAR_frozen_rift_event.50.a: "Cut it open."
+ MAR_frozen_rift_event.50.b: "Request Denied. Study the terminal instead."
+ 
+ MAR_frozen_rift_event.55.name: "The Frozen World"
+ MAR_frozen_rift_event.55.desc: "After having cut open the door, the temperature dropped significantly as we gained access to the outside world.\n\nA frozen wasteland far worse than any world we've seen.\n\nOur equipment should provide us with enough time to do some exploration."
+ MAR_frozen_rift_event.55.a: "Continue."
+ 
+ MAR_frozen_rift_event.60.name: "The Frozen Wastes"
+ MAR_frozen_rift_event.60.desc: "Our sensors show that the temperature is almost at absolute zero.\n\nThe landscape, however, show signs of a past ecosystem and flowing water, as well as markers for civilization and the ice could contain valuable data on solidification on a planetary scale.\n\nAdditionally, [Leader.GetName] has reported back that [Leader.GetHeShe] has spotted large ice formations in the distance that do not appear to be naturally occouring."
+ MAR_frozen_rift_event.60.a: "Study the ice."
+ MAR_frozen_rift_event.60.b: "Continue to the formations."
+ 
+ MAR_frozen_rift_event.61.name: "Flash Frost"
+ MAR_frozen_rift_event.61.desc.volgan: "$MAR_frozen_rift_event.61.desc.default$"
+ MAR_frozen_rift_event.61.desc.default: "The ice is just regular ice, though the molecyles trapped inside provides some insight in the climate before this planet became a frozen hellscape.\n\nAdditionally, it appears that the climate changed quite rapidly, as the substances we found trapped in the ice can only be formed at higher temperatures, and would have decayed before the freezing of the world, had it occoured at a natural rate."
+ MAR_frozen_rift_event.61.a: "Interesting."
+ 
+ MAR_frozen_rift_event.65.name: "The Towers"
+ MAR_frozen_rift_event.65.desc: "As we neared the formations, it quickly became clear that our initial theory was correct, and the formations are in fact towers of some kind, though made purely out of ice.\n\nThe function of these are not immediately clear. Inside the towers is only a small room, with a terminal similar to the one we found in the laboratory, although this one is connected to a cable that goes straight down into the icy crust of the planet."
+ MAR_frozen_rift_event.65.a: "Examine the terminal."
+ MAR_frozen_rift_event.65.b: "Drill through the ice."
+ 
+ MAR_frozen_rift_event.70.name: "Cryogenic Studies"
+ MAR_frozen_rift_event.70.desc.volgan: "The terminal was still functional, and the first file was a log detailing a cryogenic experiment involving the reflecting and collecting of light to concentrate heat.\n\nStrangely, the document appears to be signed as an official study by the Volgan Imperium.\n\nWhat purpose this study had is unknown, but the most likely explanation is that it was simply a part of their cryogenic studies for gathering more data."
+ MAR_frozen_rift_event.70.desc.default: "The terminal was still functional, and the first file was a log detailing a cryogenic experiment involving the reflecting and collecting of light to concentrate heat.\n\nIt seems as if the tower was an experiment in using ice to concentrate light, perhaps in an effort at counteracting the freezing temperatures of the planet.\n\nA very novel idea, even if it appears to have not worked very well for the aliens here"
+ MAR_frozen_rift_event.70.a: "We will put that data to good use."
+ 
+ MAR_frozen_rift_event.75.common: "Drilling through the ice and permafrost is hard, but we manage to follow the trajectory of the cable in the ice, leading us back to the laboratory in which we started."
+ 
+ MAR_frozen_rift_event.75.name: "Cryogenic Studies"
+ MAR_frozen_rift_event.75.desc.volgan: "$MAR_frozen_rift_event.75.common$ We have taken the terminals with us, which turned out to hold much data about cryogenc experiments."
+ MAR_frozen_rift_event.75.desc.default: "$MAR_frozen_rift_event.75.common$ We have taken the terminals with us, which turned out to hold much data about cryogenc experiments."
+ MAR_frozen_rift_event.75.a: "Ours for the taking."
+ 
+ MAR_frozen_rift_event.76.name: "Collapse"
+ MAR_frozen_rift_event.76.desc.volgan: "$MAR_frozen_rift_event.75.common$ Unfortunately, the constant vibrations from the drill caused the laboratory to collapse."
+ MAR_frozen_rift_event.76.desc.default: "$MAR_frozen_rift_event.75.common$ Unfortunately, the constant vibrations from the drill caused the laboratory to collapse."
+ MAR_frozen_rift_event.76.a: "Unfortunate."
+ 
+ # Godsand
+ 
+ astral_rift_MAR_godsand: "Heavy Sand"
+ 
+ MAR_godsand_rift_event.1.name: "The Desert"
+ MAR_godsand_rift_event.1.desc: "Our sphere has arrived in a desert, though already we can see that this desert is nothing like any we've seen before. Our instruments show that the composition of the sand appears to be metal-based.\n\nWe can also see a primitive, yet grand temple made out of what appears to be sandstone. It is close enough for us to see it without any aid from our equipment."
+ MAR_godsand_rift_event.1.a: "Enter the temple."
+ MAR_godsand_rift_event.1.b: "Examine the sand."
+ 
+ 
+ 
+ MAR_godsand_rift_event.50.name: "Strange Sand"
+ MAR_godsand_rift_event.50.desc: "Initial scans showed that the sand was made of a metallic compound, but further study reveals the true nature of this desert is not just an oddity of nature.\nRather, each and every grain is in fact a nanoscopic piece of circuitry - Nanites.\n\nThey appear to be dormant, but still in pristine condition."
+ MAR_godsand_rift_event.50.a: "Activate the nanites."
+ MAR_godsand_rift_event.50.b: "Enter the temple."
+ MAR_godsand_rift_event.50.c: "Bring back some nanites for study."
+ 
+ MAR_godsand_rift_event.55.name: "Everything Is Made Of Grains Of Matter"
+ MAR_godsand_rift_event.55.desc: "Using a powerful electrical current, we charged the nanites. At first nothing happened, but then they start floating in the air, though still mimicking sand.\n\nAt first we were unsure what their instructions were, but after some time we realized the temple was gone.\n\nIt appears that the nanites were instructed to mimick sand, and someone had later built a temple using compressed nano-sand."
+ MAR_godsand_rift_event.55.a: "Strange"
+ 
+ MAR_godsand_rift_event.60.name: "Disassembled"
+ MAR_godsand_rift_event.60.desc: "Using a powerful electrical current, we charged the nanites. At first the nanites started floating in the air, though did not do much else. It wasn't until [Leader.GetName] was halfway through the examination of a nanite [Leader.GetHeShe] had brought into the sphere for study that the nanites suddenly began swarming the sphere, quickly disassembling the outer hull.\n\nBefore [Leader.GetName] could activate the emergency anchor chain, contact was cut as the nanites presumably converted everything into more nanites."
+ MAR_godsand_rift_event.60.a: "Unfortunate."
+ 
+ MAR_godsand_rift_event.5.name: "A Welcome"
+ MAR_godsand_rift_event.5.desc.default: "The temple is ancient, and initial scans show that its composed of sandstone with large traces of metallic compounds.\n\nAdditionally, many symbols can be found engraved on the walls, which could potentially reveal more of the temple's origins."
+ MAR_godsand_rift_event.5.desc.nanites: "The temple is ancient, and initial scans show that the sandstone is largely composed of nanites, or nanosand as we have taken to calling it.\n\nThe fact that a primitive temple was made using advanced technology as nothing more than bricks points to the conclusion that the creators of the temple came after the deactivation of the nanites.\n\nAmong the more novel of discoveries is symbols engraved on the wall, which might hold some of the answers to our questions once translated."
+ MAR_godsand_rift_event.5.a: "Translate the symbols."
+ MAR_godsand_rift_event.5.b: "Proceed further into the temple."
+ 
+ MAR_godsand_rift_event.6.name: "The Warlord"
+ MAR_godsand_rift_event.6.desc: "Despite our best attempts, we don't manage to translate all of it, but some meaning can be derived. What we can read is that the temple was dedicated to a warlord that came from a foreign land and used magic to command the desert sand to flay his enemies, then raised this temple in a single day."
+ MAR_godsand_rift_event.6.a: "$MAR_godsand_rift_event.5.b$"
+ 
+ MAR_godsand_rift_event.10.name: "The Writing On The Wall"
+ MAR_godsand_rift_event.10.desc: "We have now reached the inner parts of the temple, although strangely we have yet to find any treasure or other artifacts that one would expect to find in an ancient structure like this.\n\nInstead, all that we have found so far is more symbols etched into the walls."
+ MAR_godsand_rift_event.10.a: "$MAR_godsand_rift_event.5.a$"
+ MAR_godsand_rift_event.10.b: "$MAR_godsand_rift_event.5.b$"
+ 
+ MAR_godsand_rift_event.11.name: "The World Before"
+ MAR_godsand_rift_event.11.desc.second: "This time the symbols tell of 'The World Before', an origin story for the natives it seems.\n\nLike most such fables, it takes place in a paradise where the inhabitants could manipulate the very world with their words alone.\n\nAt the end of the story, it states that this paradise ended when the world 'Turned to sand'."
+ MAR_godsand_rift_event.11.desc.first: "While we didn't manage to translate all of the text, what we did tell a story of 'The World Before': A paradise in which the inhabitants were free to do anything they pleased, and could shape the very world with their words alone.\n\nAt the end of the story, it states that this paradise ended when the world 'Turned to sand'."
+ MAR_godsand_rift_event.11.a: "$MAR_godsand_rift_event.5.b$"
+ 
+ MAR_godsand_rift_event.15.name: "The Central Chamber"
+ MAR_godsand_rift_event.15.desc.translated.both: "The final piece of the story has been translated, and it is the one which ties the previous ones together: When the world collapsed, the power to shape the world to ones will was lost.\n\nOr so most of this worlds inhabitants thought: One day the warlord showed up and started commanding the desert sand to do his bidding, which turned out to be the massacre of the native people.\n\nAfterwards the warlord felt guilt for this act of evil, and commanded the sand to raise a temple before leaving his 'magic' behind and setting out on a spiritual journey."
+ MAR_godsand_rift_event.15.desc.translated.second: "This time the symbols tell of how when this 'World Before' was destroyed, the inhabitants of this desert believed their ability to shape the world was lost.\n\nHowever, many decades later, an invader attacked and killed the desert people, leaving this temple as a reminder of their power."
+ MAR_godsand_rift_event.15.desc.translated.first: "This time the symbols tell of how the warlord came to the desert and killed its inhabitants. Overcome with the guilt after realizing the wrongness of this, the warlord left behind the magic that had been used after constructing this temple as a warning."
+ MAR_godsand_rift_event.15.desc.translated.default: "Our attempts at translating the symbols have yielded very little. Although we have translated most of the text correctly, it is almost as if we are lacking context.\n\nWhat we did manage to translate appears to be a tale of how the desert inhabitants were killed by the sand that made up their home and how those who did it subsequently raised this temple 'from the sand'."
+ MAR_godsand_rift_event.15.desc.default: "We have finally arrived at the central chamber. It is a very simple room, though symbols have been etched into every surface of it.\n\nIn the middle is a pedistal, and on top of it: a locked box."
+ MAR_godsand_rift_event.15.a: "Translate the symbols."
+ MAR_godsand_rift_event.15.b: "Pick open the box."
+ MAR_godsand_rift_event.15.c: "Smash open the box."
+ 
+ MAR_godsand_rift_event.20.common: "With much care we picked the lock and opened the box. Inside, instead of an amulet made of rare metals, or a gem of unusual size we found what appears to be a ... remote?"
+ MAR_godsand_rift_event.20.name: "A Strange Device"
+ MAR_godsand_rift_event.20.desc.fullnanites: "$MAR_godsand_rift_event.20.common$\n\nWith our knowledge of the nanites, and the story to cooperate, it seems like the nanites and this device was what the inhabitants of the desert percieved as magic."
+ MAR_godsand_rift_event.20.desc.nanites: "$MAR_godsand_rift_event.20.common$\n\nWith our knowledge of the nanites, the most likely explanation is that this device is capable of controlling them. A very useful capability indeed."
+ MAR_godsand_rift_event.20.desc.translated: "$MAR_godsand_rift_event.20.common$\n\nWith the context of the story, it may be assumed that the 'magic' was in reality this very advanced technology."
+ MAR_godsand_rift_event.20.desc.default: "$MAR_godsand_rift_event.20.common$ The item in question is certainly not something a primitive civilization could have made."
+ MAR_godsand_rift_event.20.b: "Magic or not, it is ours now."
+ MAR_godsand_rift_event.20.a: "Strange."
+ 
+ MAR_godsand_rift_event.25.common: "The box proved to be surprisingly fragile, crumbling to dust after a single hit. More strange, however, was that instead of some kind of valuable, the contents of the box was a single strange device that appear to be in pristine condition."
+ MAR_godsand_rift_event.25.desc.fullnanites: "$MAR_godsand_rift_event.25.common$\n\nWith our knowledge of the nanites, and the story to cooperate, it seems like the nanites and this device was what the inhabitants of the desert percieved as magic."
+ MAR_godsand_rift_event.25.desc.nanites: "$MAR_godsand_rift_event.25.common$\n\nWith our knowledge of the nanites, the most likely explanation is that this device is capable of controlling them. A very useful capability indeed."
+ MAR_godsand_rift_event.25.desc.translated: "$MAR_godsand_rift_event.25.common$\n\nWith the context of the story, it may be assumed that the 'magic' was in reality this very advanced technology."
+ MAR_godsand_rift_event.25.desc.default: "$MAR_godsand_rift_event.25.common$ The item in question is certainly not something a primitive civilization could have made."
+ 
+ MAR_godsand_rift_event.30.common: "Despite our great care to not hit the box harder than deemed necessary, the extreme age of it made it crumble almost instantly on impact. Worse, we managed to hit the contents of the box, which appeared to be a device far too advanced for any primitive civilization that might have built this temple."
+ MAR_godsand_rift_event.30.name: "The Curse"
+ MAR_godsand_rift_event.30.desc.nanites: "$MAR_godsand_rift_event.30.common$\n\nIf that wasn't bad enough, it turned out that the nanites that made up the temple came to life at this moment and began deconstructing our exploration team.\n\n[Leader.GetName] is assumed to have perished along with the rest of the exploration team."
+ MAR_godsand_rift_event.30.desc.translated: "$MAR_godsand_rift_event.30.common$\n\nIf that wasn't bad enough, it seems like whatever magic was mentioned in the story was indeed real, as our last audio recording from our exploration team was screams and pleas for immediate extraction.\n\nWith the loss of contact, we must assume [Leader.GetName] to have been killed in action."
+ MAR_godsand_rift_event.30.desc.default: "$MAR_godsand_rift_event.30.common$\n\nIf that wasn't bad enough, the temple quickly started to crumble, and from our last audio transfer it sounded like the sand then began 'eating' our exploration team alive.\n\nWith the loss of contact, we must assume [Leader.GetName] to have been killed in action."
+ MAR_godsand_rift_event.30.a: "Unfortunate."
+ 
+ MAR_godsand_rift_event.30.a.nanites: " We should have been more careful."
+ MAR_godsand_rift_event.30.a.translated: "A curse!"
+ MAR_godsand_rift_event.30.a.default: "Horrible!"
+ 
+ r_MAR_godsand_remote: "Nanite Command Module"
+ r_MAR_godsand_remote_desc: "A device capable of sending complex orders to nanites. Its interface is incredibly easy to use, so easy in fact that even a primitive being could use it without much issue."
+ relic_MAR_godsand_remote_active: ""
+ 
+ MAR_nanite_help: "Nanite Construction Swarm"
+ MAR_nanite_help_desc: "A swarm of nanites from another dimension is assisting this empire's construction efforts."
+ 
+ # The Werediran signal
+ 
+ astral_rift_MAR_werediran_signal: "Strange Signal"
+ 
+ MAR_werediran_rift_event.1.name: "Strange Signal"
+ MAR_werediran_rift_event.1.desc.gestalt: "$MAR_werediran_rift_event.1.desc.default$"
+ MAR_werediran_rift_event.1.desc.default: "The first thing we saw when we arrived was the colorful and bright forest befitting of a tropical world, though our equipment immediately picked up on other things.\n\nA strong radio signal seems to constantly emenate from some point far away."
+ MAR_werediran_rift_event.1.desc.signal: "Furthermore, in the distance is a large structure, not unlike the one we found on [event_target:werediran_planet_1.GetName]."
+ MAR_werediran_rift_event.1.desc.werediran: "Furthermore, in the distance is a large radio tower, not unlike that of the werediran's design."
+ MAR_werediran_rift_event.1.desc.silent: "Furthermore, a large structure can be seen in the distance, towerering above even the largest of trees."
+ MAR_werediran_rift_event.1.a: "Interesting."
+ 
+ MAR_werediran_rift_event.2.name: "Under Construction"
+ MAR_werediran_rift_event.2.desc.gestalt: "$MAR_werediran_rift_event.2.desc.default$"
+ MAR_werediran_rift_event.2.desc.default: "As we come closer to the tower, we start picking up signs of civilization. At first a road going in the direction of the tower, then the inhabitants themselves, ferrying construction materials along said roads towards the tower."
+ MAR_werediran_rift_event.2.desc.signal: "At this distance it looks like it is nearing completion."
+ MAR_werediran_rift_event.2.desc.werediran: "At this distance it becomes clear that the tower is nearing completion."
+ MAR_werediran_rift_event.2.desc.silent: ""
+ MAR_werediran_rift_event.2.a: "Approach the aliens."
+ MAR_werediran_rift_event.2.b: "Observe from a distance."
+ 
+ MAR_werediran_rift_event.3.name: "A Friend In The Sky"
+ MAR_werediran_rift_event.3.desc.gestalt: "$MAR_werediran_rift_event.3.desc.default$"
+ MAR_werediran_rift_event.3.desc.default: "We approach one of the aliens, which does not appear to be afraid of our presence, despite it being a primitive being."
+ MAR_werediran_rift_event.3.desc.signal: "\nIts language is surprisingly similar to ours in its structure, allowing for a quick translation.\n\nIt explained that the tower they are building is a way to communicate with their 'friend from beyond the sky', and that it cannot linger anymore as it needs to 'come home'."
+ MAR_werediran_rift_event.3.desc.werediran: "\nSurprisingly, its language is the same as ours, though with some variance due to biological differences.\n\nIt explained that the tower is a way to communicate with the Werediran, and that it feels its presence in us too."
+ MAR_werediran_rift_event.3.desc.silent: "\nWith some effort we manage to communicate with it using gestures and simple sounds.\n\nIt explained that the tower they are building is a way for them to communicate with their 'friend from the skies', and that it is waiting for them to join 'it', although our limited shared vobaculary doesn't allow us to glean more information from our exchange.\n\nIt then excused itself and said that it had work to do."
+ MAR_werediran_rift_event.3.a: "We should observe them."
+ MAR_werediran_rift_event.3.b: "We should help them."
+ MAR_werediran_rift_event.3.c: "We should warn them."
+ 
+ MAR_werediran_rift_event.4.name: "Almost Complete"
+ MAR_werediran_rift_event.4.desc.gestalt: "$MAR_werediran_rift_event.4.desc.gestalt$"
+ MAR_werediran_rift_event.4.desc.default: "Despite our warnings, the alien dismisses us without much thought and continues its work."
+ MAR_werediran_rift_event.4.desc.werediran: "Despite our warnings, the alien dismisses us without much thought and continues its work.\nPretty soon the tower will be complete."
+ MAR_werediran_rift_event.4.a: "Observe them for now."
+ MAR_werediran_rift_event.4.b: "We should leave."
+ 
+ MAR_werediran_rift_event.5.name: "The Signal"
+ MAR_werediran_rift_event.5.desc.gestalt: "The aliens were fast at work, using primitive tools and materials to finish the last part of their grand project. It isn't until there's a sudden and total silence that we realize something is amiss: They have finally finished their tower, and all are staring up at the top, as if expecting something to happen."
+ MAR_werediran_rift_event.5.desc.default: "The aliens were fast at work, using primitive tools and materials to finish the last part of their grand project. It isn't until there's a sudden and total silence that we realize something is amiss: They have finally finished their tower, and all are staring up at the top, as if expecting something to happen."
+ MAR_werediran_rift_event.5.desc.warning: "The aliens were fast at work, not heeding our warning. It isn't until there's a sudden and total silence that we realize something is amiss: They have finally finished their tower, and all are staring up at the top, as if expecting something to happen."
+ MAR_werediran_rift_event.5.desc.signal: "\n\nThen, moments later we recieve a transmission through our sphere's commucation channels from a foreign source. The contents are strikingly similar to the one that led us to the tower on [event_target:werediran_planet_1]."
+ MAR_werediran_rift_event.5.desc.werediran: "\n\nThen, moments later a transmission composed entirely of static is sent through out Sphere's communication channels. The perpetrator is undoubtedly the ancient precursor we know as the Werediran, and it seems as if the rift we went through has brought us to a time and space where it is still active on the galactic stage."
+ MAR_werediran_rift_event.5.desc.silent: "\n\nThen, moments later our sphere's electronics start going haywire, and everything capable of emitting soundwaves suddenly start doing so. The sound is a loud static that seems to flood all communication channels.\n\nIt takes several minutes before we manage to reestablish a connection free from this strange signal, though the signal seems only to be getting stronger."
+ MAR_werediran_rift_event.5.a: "Pull out the sphere."
+ MAR_werediran_rift_event.5.b: "Filter out the signal."
+ MAR_werediran_rift_event.5.c: "Record the signal."
+ MAR_werediran_rift_event.5.d: "Try to communicate."
+ 
+ MAR_werediran_rift_event.6.name: "Signal Recorded"
+ MAR_werediran_rift_event.6.desc.gestalt: "$MAR_werediran_rift_event.6.desc.default$"
+ MAR_werediran_rift_event.6.desc.default: "Quite quickly the signal became stronger and started to interfere with our equipment, causing multiple corrupted recordings and other equipment failure before we managed to get a recording."
+ MAR_werediran_rift_event.6.desc.werediran: "\nIt was deemed too dangerous to stay for further recordings, but what we got will be very useful for refining our own signals."
+ MAR_werediran_rift_event.6.desc.signal: "\nThe strange signal was deemed too dangerous for further recordings, and we used the emergency anchor to pull the sphere out of the rift"
+ MAR_werediran_rift_event.6.a: "Curios."
+ 
+ MAR_werediran_rift_event.7.name: "Sphere Lost"
+ MAR_werediran_rift_event.7.desc.gestalt: "$MAR_werediran_rift_event.7.desc.default$"
+ MAR_werediran_rift_event.7.desc.default: "Quite quickly the signal became stronger and started to interfere with our equipment, somehow affecting not only the data obtained, but also the physical mediums that our programs were running on."
+ MAR_werediran_rift_event.7.desc.signal: "Quite quickly the signal became stronger and started to interfere with our equipment, somehow affecting not only the data obtained, but also the physical mediums that our programs were running on.\n\nHow radio-based wavelengths could affect it like that is unknown.\n\nUnfortunately we didn't manage to pull the sphere back before it self-destructed with [Leader.GetName] still inside."
+ MAR_werediran_rift_event.7.desc.werediran: "Quite quickly the signal became stronger and started to interfere with our equipment, somehow affecting not only the data obtained, but also the physical mediums that our programs were running on.\n\nWorse still, the Werediran managed to trigger a self-destruct sequence in the sphere, overriding all safety protocols.\n\nWhat happened to [Leader.GetName] is unknown, but it is assumed [Leader.GetHeShe] was killed in the explosion."
+ MAR_werediran_rift_event.7.a: "Tragic"
+ 
+ MAR_werediran_rift_event.10.name: "Filtered"
+ MAR_werediran_rift_event.10.desc.gestalt: "$MAR_werediran_rift_event.10.desc.default$"
+ MAR_werediran_rift_event.10.desc.default: "With some effort we manage to filter out the signal and isolate our communication channels and equipment from the influence of the"
+ MAR_werediran_rift_event.10.desc.signal: "strange signal. However, measurements of its strength shows that it won't be long before our channels and equipment will be affected by it again.\n\nBefore we managed to cut of the signal from our network, we did get one last message that was seemingly meant for us:\n\n§HLet me ... help you.§!"
+ MAR_werediran_rift_event.10.desc.werediran: "Werediran.\n\nHowever, a last spike in activity just before we did this managed to activate the sphere's return protocol, pulling us out of the rift.\n\nIt was accompanied by a single message: §HGo home, my children.§!"
+ MAR_werediran_rift_event.10.desc.silent: "strange signal. However, measurements of its strength shows that it won't be long before our channels and equipment will be affected by it again.\n\nBefore we managed to cut of the signal from our network, we did get one last message that was seemingly meant for us:\n\n§HI am ... waiting for you.§!"
+ MAR_werediran_rift_event.10.a: "Listen."
+ MAR_werediran_rift_event.10.b: "Let's leave while we can."
+ MAR_werediran_rift_event.10.c: "We're almost there."
+ MAR_werediran_rift_event.10.d: "Strange."
+ 
+ MAR_werediran_rift_event.11.name: "Lost"
+ MAR_werediran_rift_event.11.desc.gestalt: "$MAR_werediran_rift_event.11.desc.default$"
+ MAR_werediran_rift_event.11.desc.default: "We attempt to isolate our communication channels from the effects of the signal, but it quickly increased in stength, tenfold, and our line is filled with the sound of static."
+ MAR_werediran_rift_event.11.desc.signal: "\n\nThen silence."
+ MAR_werediran_rift_event.11.desc.werediran: "\n\nThen silence, followed by two words: Come Home."
+ MAR_werediran_rift_event.11.desc.silent: "\n\nThen silence."
+ MAR_werediran_rift_event.11.a: "Tragic."
+ 
+ MAR_werediran_rift_event.15.name: ""
+ MAR_werediran_rift_event.15.desc.gestalt: "$MAR_werediran_rift_event.15.desc.default$"
+ MAR_werediran_rift_event.15.desc.default: "Our communication channels were at once silenced. Then a singular voice could be heard.\n\n§HListen. Listen and follow my voice.§!\n\nA large amount of data was then transfered.\n\nThe data appears to be the blueprints of a tower similar to the one the aliens on this planet has built."
+ MAR_werediran_rift_event.15.a: "Save the blueprints."
+ MAR_werediran_rift_event.15.b: "Delete that vile data!"
+ 
+ MAR_werediran_rift_event.20.name: ""
+ MAR_werediran_rift_event.20.desc.gestalt: ""
+ MAR_werediran_rift_event.20.desc.default: ""
+ MAR_werediran_rift_event.20.a: ""
+ 
+ MAR_werediran_rift_event.21.name: ""
+ MAR_werediran_rift_event.21.desc.gestalt: ""
+ MAR_werediran_rift_event.21.desc.default: ""
+ MAR_werediran_rift_event.21.desc.signal: ""
+ MAR_werediran_rift_event.21.desc.werediran: ""
+ MAR_werediran_rift_event.21.desc.silent: ""
+ MAR_werediran_rift_event.21.a: ""
+ 
+ MAR_werediran_rift_event.22.name: ""
+ MAR_werediran_rift_event.22.desc.gestalt: ""
+ MAR_werediran_rift_event.22.desc.default: ""
+ MAR_werediran_rift_event.22.desc.signal: ""
+ MAR_werediran_rift_event.22.desc.werediran: ""
+ MAR_werediran_rift_event.22.desc.silent: ""
+ MAR_werediran_rift_event.22.a: ""
+ 
+ MAR_werediran_rift_event.23.name: ""
+ MAR_werediran_rift_event.23.desc.gestalt: ""
+ MAR_werediran_rift_event.23.desc.default: ""
+ MAR_werediran_rift_event.23.desc.signal: ""
+ MAR_werediran_rift_event.23.desc.werediran: ""
+ MAR_werediran_rift_event.23.desc.silent: ""
+ MAR_werediran_rift_event.23.a: ""
+ 
+ MAR_werediran_rift_event.25.name: ""
+ MAR_werediran_rift_event.25.desc.gestalt: ""
+ MAR_werediran_rift_event.25.desc.default: ""
+ MAR_werediran_rift_event.25.desc.signal: ""
+ MAR_werediran_rift_event.25.desc.werediran: ""
+ MAR_werediran_rift_event.25.desc.silent: ""
+ MAR_werediran_rift_event.25.a: ""
+ 
+ MAR_werediran_rift_event.26.name: ""
+ MAR_werediran_rift_event.26.desc.gestalt: ""
+ MAR_werediran_rift_event.26.desc.default: ""
+ MAR_werediran_rift_event.26.desc.signal: ""
+ MAR_werediran_rift_event.26.desc.werediran: ""
+ MAR_werediran_rift_event.26.desc.silent: ""
+ MAR_werediran_rift_event.26.a: ""
+ 
+ MAR_werediran_rift_event.27.name: ""
+ MAR_werediran_rift_event.27.desc.gestalt: ""
+ MAR_werediran_rift_event.27.desc.default: ""
+ MAR_werediran_rift_event.27.desc.signal: ""
+ MAR_werediran_rift_event.27.desc.werediran: ""
+ MAR_werediran_rift_event.27.desc.silent: ""
+ MAR_werediran_rift_event.27.a: ""
+ 
+ MAR_called_home: "Called Home"
+ 
+ MAR_signal_recorded: "Strange Signal."
+ MAR_signal_recorded_desc: "We have recorded a segment of the Werediran Signal."
+ 
+ tech_astral_werediran: "Quantum Frequency Relay"
+ tech_astral_werediran_desc: "A large-scale array of scanners that is atuned to a very specific range of radio waves."
+ tech_MAR_werediran_effect: "Who knows what consequences this will have?"
+ 
+ # The Valley
+ 
+ astral_rift_MAR_valley: "Idyllic Valley"
+ 
+ MAR_valley_rift_event.1.name: "Idyllic Valley"
+ MAR_valley_rift_event.1.desc.gestalt: "$MAR_valley_rift_event.1.desc.default$"
+ MAR_valley_rift_event.1.desc.default: "Our sphere arrived in what can only be described as a scene out of a fairytale: Blooming trees, lush grass and a clear blue sky.\n\nIn the distance is what looks like small primitive huts."
+ MAR_valley_rift_event.1.a: "We need to know more about this land."
+ MAR_valley_rift_event.1.b: "Lets get to those huts!"
+ 
+ MAR_valley_rift_event.5.name: "Advanced Origin"
+ MAR_valley_rift_event.5.desc.gestalt: "$MAR_valley_rift_event.5.desc.default$"
+ MAR_valley_rift_event.5.desc.default: "The huts are primitive, yet the materials used in their construction are very sophisticated. This points towards the builders being an advanced civilization like ours.\n\nInside the huts were advanced devices, further supporting this theory, however nothing particularly noteworthy.\n\nAdditionally, a cellar was found in the centermost building."
+ MAR_valley_rift_event.5.a: "Open the cellar."
+ 
+ MAR_valley_rift_event.10.name: "Shelter"
+ MAR_valley_rift_event.10.desc.gestalt: "$MAR_valley_rift_event.10.desc.default$"
+ MAR_valley_rift_event.10.desc.default: "Inside the cellar is food. Lots of food.\n\nAll of it is packed in vacuum and has been dehydrated to 0% humidity. Theoretically it should last forever.\n\nThe cellar itself is not that spectacular, and beyond food there's only a document labeled "§HWelcome to the emergency safe zone 21§!"
+ MAR_valley_rift_event.10.a: "Read the Document"
+ 
+ MAR_valley_rift_event.15.name: "Emergency Bunker"
+ MAR_valley_rift_event.15.desc.gestalt: "$MAR_valley_rift_event.15.desc.default$"
+ MAR_valley_rift_event.15.desc.default: "The document states: §H"Welcome to the emergency safe zone 21\n\n This emergency safe zone should be able to safely house a population of 10.000 individuals of most* species, and has enough sustenance for 50 years, during which the fertile land in your emergency safe zone*tm* can be converted into agricultural farmland. The emergency safe zone is not designed for use extending more than 5000 years, and has a maximum capacity of 20000 individuals of standard sized species. Do not try to expand your emergency safe zone without authorized personnel. Refunds are only valid if the emergency safe zone fails due to outside factors."§!"
+ MAR_valley_rift_event.15.a: "Peculiar"
+ 
+ MAR_valley_rift_event.25.name: "Barrier"
+ MAR_valley_rift_event.25.desc.gestalt: "$MAR_valley_rift_event.25.desc.default$"
+ MAR_valley_rift_event.25.desc.default: "While flying, all of a sudden a large object shows up on our radar. At first we are unsure what it is, but it is impossibly large and seems to be a mountain barrier, except it goes up with no end, and curves almost like a dome.\n\nUpon reaching it we are able to affirm that it is indeed a dome-like structure.\n\nWe are unsure what it is composed of, but it appears to be of crystaline structure of which light can pass through."
+ MAR_valley_rift_event.25.a: "Scan the barrier"
+ MAR_valley_rift_event.25.b: "Drill through the barrier."
+ 
+ MAR_valley_rift_event.30.name: "Edge of the World"
+ MAR_valley_rift_event.30.desc.gestalt: ""
+ MAR_valley_rift_event.30.desc.default: "After throughout scanning of the composition and strucucture of the barrier as well as what is behind it. The result are disapointing to say the least, as the results are nothing. Nothing at all: We were unable to determine the composition, and the structural scans appears to have been warped by some sort of influence projected by the barrier.\n\n[Leader.GetName] ascertains that the only way to obtain more information would be to tunnel through the barrier with our Sphere's onboard drill."
+ MAR_valley_rift_event.30.a: "Drill through the barrier."
+ MAR_valley_rift_event.30.b: "Perhaps the answer lies in those huts?"
+ 
+ MAR_valley_rift_event.35.name: "Void Beyond"
+ MAR_valley_rift_event.35.desc.gestalt: ""
+ MAR_valley_rift_event.35.desc.default: "The barrier was tougher than we expected, but in the end we managed to drill through it.\n\nAs soon as we were through, we were met not with another idyllic valley or further extension of the planet, but instead nothingness.\n\nInstantly the air began flowing outwards to fill the vacuum, threatening to pull the sphere with it. [Leader.GetName] says [Leader.GetHeShe] and [Leader.GetHisHer] team would have been dead had it not been for the emergency anchor attached to the sphere, preventing it from going fully through."
+ MAR_valley_rift_event.35.a: "We were lucky this time."
+ 
+ # Stairs of Infinity
+ astral_rift_MAR_stairs: "Stairs Of Infinity"
+ MAR_stairs_rift_event.descend: "Go back down."
+ 
+ MAR_stairs_rift_event.1.name: "A Peculiar Structure"
+ MAR_stairs_rift_event.1.desc: "Our sphere arrived on what looked like a barren planet. Despite this, our instruments show that the atmosphere matches that of [explorer.Capital_scope.GetName]. In the middle of the dust bowl we're in, a staircase extends into the sky, going so far up that it is obscured by the clouds."
+ MAR_stairs_rift_event.1.a: "Follow the stairs up with our sphere."
+ MAR_stairs_rift_event.1.b: "Exit the sphere and walk up the stairs."
+ 
+ MAR_stairs_rift_event.2.name: "A Long Trip"
+ MAR_stairs_rift_event.2.desc: "Exiting the sphere, [Leader.GetName] and [Leader.GetHisHer] team has started the ascend, and though at first the laughter ran lightly and some counting of steps were done, the audacious task of climbing up has proven harder and more time-consuming than first anticipated."
+ MAR_stairs_rift_event.2.a: "Continue."
+ MAR_stairs_rift_event.2.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.3.name: "Peculiar Atmosphere"
+ MAR_stairs_rift_event.3.desc: "As we got progressively further up through the layers of atmosphere, we continued to measure the atmospheric pressure and composition. Despie being further from the surface, breathability and gravity appears to be consistent with surface measurements.\n\nThis however allows for a rapid ascend."
+ MAR_stairs_rift_event.3.a: "Continue."
+ MAR_stairs_rift_event.3.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.4.name: "Cloud Layer"
+ MAR_stairs_rift_event.4.desc: "The further up we get, the more we wonder how the structural integrity of the stairs hold up, although the question of how the atmospheric pressure has not changed for the many past days are becoming increasingly concerning.\n\nThis, however, does also come with the benefit of a continued rapid climb of which we have already reached the lower layer of clouds."
+ MAR_stairs_rift_event.4.a: "Continue."
+ MAR_stairs_rift_event.4.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.5.name: "Above The Clouds"
+ MAR_stairs_rift_event.5.desc: "Now above the clouds, we can see that the stairs extend further up, all the way into space we assume, although we cannot know for certain."
+ MAR_stairs_rift_event.5.a: "Continue."
+ MAR_stairs_rift_event.5.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.6.name: "Stars Above"
+ MAR_stairs_rift_event.6.desc: "We are now undoutbedly in the upper layers of the atmosphere, right before space. At this point the light is no longer refracted by the atmosphere, giving a clear view of the stars."
+ MAR_stairs_rift_event.6.a: "Continue."
+ MAR_stairs_rift_event.6.b: "$MAR_stairs_rift_event.descend$"
+ 
+ #MAR_stairs_rift_event.7.name: "Stars Above"
+ #MAR_stairs_rift_event.7.desc: ""
+ #MAR_stairs_rift_event.7.a: ""
+ #MAR_stairs_rift_event.7.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.8.name: "Darkened Skies"
+ MAR_stairs_rift_event.8.desc: "Now beyond most of the influence of the planet we started on, the stairs continue further up.\n\nBy now the lack of atoms beyond the immediate vicinity of the stairs has allowed us to use a small-scale space telescope to see how long the stairs extend, confirming that the end is nowhere in sight."
+ MAR_stairs_rift_event.8.a: "Continue."
+ MAR_stairs_rift_event.8.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.9.name: "Into The Void"
+ MAR_stairs_rift_event.9.desc: "Our latest report from the expedition on the stairs is very short, and boils down to having exited the sphere of influence of the planet, except for its gravity well, although gravity has also lessened considerably."
+ MAR_stairs_rift_event.9.a: "Continue."
+ MAR_stairs_rift_event.9.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.10.name: "Stairs Of Infinity"
+ MAR_stairs_rift_event.10.desc: "[Leader.GetName] has reported little about what has happened lately, instead sending a message intended to be recieved by [Leader.GetName]'s relatives. Something about not being home for the holidays."
+ MAR_stairs_rift_event.10.a: "Continue."
+ MAR_stairs_rift_event.10.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.11.name: "Stairs Of Infinity"
+ MAR_stairs_rift_event.11.desc: "Contact with [Leader.GetName] has been sparse as of lately, and we're not sure how long [Leader.GetHeShe] can keep up."
+ MAR_stairs_rift_event.11.a: "Continue."
+ MAR_stairs_rift_event.11.b: "$MAR_stairs_rift_event.descend$"
+ 
+ #MAR_stairs_rift_event.12.name: "Increasing Nervousness"
+ #MAR_stairs_rift_event.12.desc: ""
+ #MAR_stairs_rift_event.12.a: ""
+ #MAR_stairs_rift_event.12.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.13.name: "Eternal Punishment"
+ MAR_stairs_rift_event.13.desc: "The daily reprot from [Leader.GetName] has raised concern among the overseer of the stairs expedition. With no end in sight, [Leader.GetName] and many among [Leader.GetHisHer] team has come to the belief that they are not part of an exploratoy expedition, but instead have been punished to wander the stairs for eternity.\n\n[Leader.GetName] [Leader.GetHimHer]self has expressed a desire to return, but is afraid of 'divine retribution' should [Leader.GetHeShe] turn around without permission."
+ MAR_stairs_rift_event.13.a: "There is no return."
+ MAR_stairs_rift_event.13.b: "$MAR_stairs_rift_event.descend$"
+ 
+ MAR_stairs_rift_event.14.name: "Contact Lost"
+ MAR_stairs_rift_event.14.desc: "We have lost contact with [Leader.GetName]. The last message recieved contains the following: §H7200 steps left§!."
+ MAR_stairs_rift_event.14.a: ""
+ 
+ MAR_stairs_rift_event.20.name: "To Infinity"
+ MAR_stairs_rift_event.20.desc: "The stairs continue up, seemingly held up only by its own structural integrity. It continues up through the clouds, then further up."
+ MAR_stairs_rift_event.20.a: "Peculiar."
+ 
+ MAR_stairs_rift_event.21.name: "And Beyond"
+ MAR_stairs_rift_event.21.desc: "The stairs do not have an end to them, and we fly until we have no more cable to spare. [Leader.GetName] says its an interesting structure, although we're unable to make much use of the information without knowledge of its true dimensions."
+ MAR_stairs_rift_event.21.a: "A waste of time."
+ 
+ MAR_stairs_rift_event.25.name: "A Fast Descend"
+ MAR_stairs_rift_event.25.desc: "[Leader.GetName] has reached the bottom surprisingly fast, having barely walked more than a few steps before [Leader.GetHeShe] found [Leader.GetHimHer]self at the surface. [Leader.GetHeShe] is unsure what is the cause behind this, but believes the rules of physics in this universe may differ greatly from our own."
+ MAR_stairs_rift_event.25.a: "Strange."
+ 
+ MAR_stairs_rift_event.35.name: "Returned From Infinity"
+ MAR_stairs_rift_event.35.desc: "Having been gone for 20 years, [Leader.GetName] has suddenly returned from [Leader.GetHisHer] expedition.\n\nStrangely [Leader.GetHeShe] hasn't aged since [Leader.GetHisHer] departure. This, however, should be of no consequence to their continuation of service the [Owner.GetName]."
+ MAR_stairs_rift_event.35.a: "Welcome Back!"
+ 
+ # trait
+ MAR_leader_trait_stairs: "Ascended"
+ MAR_leader_trait_stairs_desc: "This leader has braved the infinite ascend and has attained knowledge from beyond this world."

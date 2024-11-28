@@ -1,0 +1,26 @@
+##################################
+# Scripted Effects
+##################################
+
+add_MAR_trait_to_leader_or_research_node_effect  = {
+	if = {
+		limit = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		owner = {
+			random_owned_leader = {
+				limit = {
+					is_councilor_type = councilor_gestalt_cognitive
+				}
+				add_trait = $TRAIT$_gestalt
+			}
+		}
+	}
+	else = {
+		leader = {
+			add_trait = $TRAIT$
+		}
+	}
+}

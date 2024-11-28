@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_specimen_MAR_lightbeast_scale"
+		texturefile = "gfx/interface/icons/specimens/MAR_lightbeast_scale.dds"
+	}
+}

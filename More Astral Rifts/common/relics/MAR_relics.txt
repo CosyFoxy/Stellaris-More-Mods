@@ -1,0 +1,180 @@
+@activation_cost = 3000
+@triumph_duration = 3600
+@triumph_duration_short = 1800
+@triumph_duration_veryshort = 900
+
+r_MAR_clockstopper = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_MAR_clockstopper"
+	sound = "relic_activation_generic"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 3000
+		}
+	}
+
+	ai_weight = {
+		weight = 50
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		leader_lifespan_mult = 0.1
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = relic_MAR_clockstopper_active
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+			every_owned_leader = {
+				limit = {
+					leader_age > 10
+				}
+				add_age = -10
+			}
+			#ruler = {
+			#	if = {
+			#		limit = {
+			#			NOT = {
+			#				is_variable_set = MAR_clockstopper_reset
+			#			}
+			#		}
+			#		set_variable = {
+			#			which = MAR_clockstopper_reset
+			#			value = trigger:leader_age
+			#		}
+			#	}
+			#	else = {
+			#		set_age = MAR_clockstopper_reset
+			#	}
+			#}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_MAR_clockstopper
+		}
+	}
+}
+
+r_MAR_godsand_remote = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_MAR_godsand_remote"
+	sound = "relic_activation_generic"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 3000
+		}
+		produces = {
+			nanites = 1
+		}
+	}
+
+	ai_weight = {
+		weight = 50
+	}
+
+	score = 1000
+
+	active_effect = {
+		#custom_tooltip = relic_MAR_godsand_remote_active
+		add_modifier = {
+			modifier = "MAR_nanite_help"
+			days = @triumph_duration
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+		}
+		# Create some nanite swarmers?
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_MAR_godsand_remote
+		}
+	}
+}
+
+r_MAR_lightbeast_head = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_MAR_lightbeast_head"
+	sound = "relic_activation_generic"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 3000
+		}
+	}
+
+	ai_weight = {
+		weight = 50
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		intel_decryption_add = 2
+	}
+
+	score = 1000
+
+	active_effect = {
+		#custom_tooltip = relic_MAR_lightbeast_head_active
+		if = {
+			limit = {
+				has_first_contact_dlc = yes
+			}
+			add_modifier = {
+				modifier = "MAR_lightbeast_cloaking"
+				days = @triumph_duration
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = "MAR_lightbeast_encryption"
+				days = @triumph_duration
+			}
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_MAR_lightbeast_head
+		}
+	}
+}

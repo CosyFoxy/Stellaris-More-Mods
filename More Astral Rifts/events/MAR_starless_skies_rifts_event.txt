@@ -1,0 +1,752 @@
+# Starless Skies
+# By Metallichydra
+
+namespace = MAR_starless_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+astral_rift_event = {
+	id = MAR_starless_rift_event.1
+	title = MAR_starless_rift_event.1.name
+	desc = MAR_starless_rift_event.1.desc
+	picture = 	GFX_evt_aggressive_flora
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Activate our heavy scanners
+	option = {
+		name = MAR_starless_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.5 }
+	}
+	
+	# Sample the local flora
+	option = {
+		name = MAR_starless_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.80 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We activate heavy scanners
+astral_rift_event = {
+	id = MAR_starless_rift_event.5
+	title = MAR_starless_rift_event.5.name
+	desc = MAR_starless_rift_event.5.desc
+	picture = GFX_evt_in_the_dark
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Fly up to see the ceiling
+	option = {
+		name = MAR_starless_rift_event.5.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.10 }
+	}
+	
+	# Change to a laser-based reckon system (Shine up a laser)
+	option = {
+		name = MAR_starless_rift_event.5.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.50 }
+	}
+	
+	# Sample the local flora
+	option = {
+		name = MAR_starless_rift_event.5.c
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.80 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We fly up
+astral_rift_event = {
+	id = MAR_starless_rift_event.10
+	title = MAR_starless_rift_event.10.name
+	desc = MAR_starless_rift_event.10.desc
+	picture = GFX_evt_worrying_signal
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_starless_rift_event.10.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.15 }
+	}
+	
+	# Pull out of the rift!
+	option = {
+		name = MAR_starless_rift_event.10.b
+		set_astral_rift_flag = MAR_starless_skies_flee
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.16 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# The beast is revealed
+astral_rift_event = {
+	id = MAR_starless_rift_event.15
+	title = MAR_starless_rift_event.15.name
+	desc = MAR_starless_rift_event.15.desc
+	picture = GFX_evt_space_monster
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Observe it
+	option = {
+		name = MAR_starless_rift_event.15.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.25 }
+	}
+	
+	# Pull out of the rift!
+	option = {
+		name = MAR_starless_rift_event.15.b
+		set_next_astral_rift_event = {
+			id = MAR_starless_rift_event.20
+			on_roll_failed = MAR_starless_rift_event.21
+			fail_probability = @default_failure_probability
+		}
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Pull out (success)
+astral_rift_event = {
+	id = MAR_starless_rift_event.16
+	title = MAR_starless_rift_event.20.name
+	desc = MAR_starless_rift_event.20.desc
+	picture = GFX_evt_astral_scar
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Good
+	option = {
+		name = MAR_starless_rift_event.20.a
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Pull out (success)
+astral_rift_event = {
+	id = MAR_starless_rift_event.20
+	title = MAR_starless_rift_event.20.name
+	desc = MAR_starless_rift_event.20.desc
+	picture = GFX_evt_astral_scar
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Good
+	option = {
+		name = MAR_starless_rift_event.20.a
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Pull out (Failure)
+astral_rift_event = {
+	id = MAR_starless_rift_event.21
+	title = MAR_starless_rift_event.21.name
+	desc = MAR_starless_rift_event.21.desc
+	picture = GFX_evt_unspeakable_horror
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Bad
+	option = {
+		name = MAR_starless_rift_event.21.a
+		# Kill scientist
+		fleet = {
+			kill_leader = {
+				show_notification = no
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Observe it
+astral_rift_event = {
+	id = MAR_starless_rift_event.25
+	title = MAR_starless_rift_event.25.name
+	desc = MAR_starless_rift_event.25.desc
+	picture = GFX_evt_space_monster
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Dim the lights
+	option = {
+		name = MAR_starless_rift_event.25.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.30 }
+	}
+	
+	# Turn up the lights
+	option = {
+		name = MAR_starless_rift_event.25.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.35 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Dim the lights
+astral_rift_event = {
+	id = MAR_starless_rift_event.30
+	title = MAR_starless_rift_event.30.name
+	desc = MAR_starless_rift_event.30.desc
+	picture = GFX_evt_astral_scar
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Curious / Peculiar
+	option = {
+		name = MAR_starless_rift_event.30.a
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Turn up the lights
+astral_rift_event = {
+	id = MAR_starless_rift_event.35
+	title = MAR_starless_rift_event.35.name
+	desc = MAR_starless_rift_event.35.desc
+	picture = GFX_evt_space_monster
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Scan the composition of its scales
+	option = {
+		name = MAR_starless_rift_event.35.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.40 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Scanned Composition
+astral_rift_event = {
+	id = MAR_starless_rift_event.40
+	title = MAR_starless_rift_event.40.name
+	desc = MAR_starless_rift_event.40.desc
+	picture = GFX_evt_strategic_resources
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Good
+	option = {
+		name = MAR_starless_rift_event.40.a
+		# Give Cloaking Modifier / No modifier if no First Contact
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		if = {
+			limit = {
+				has_first_contact_dlc = yes
+			}
+			explorer = {
+				add_modifier = {
+					modifier = MAR_starless_scales
+					days = -1
+				}
+			}
+		}
+		else = {
+			explorer = {
+				add_modifier = {
+					modifier = MAR_starless_scales_no_first_contact
+					days = -1
+				}
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We switch to laser-based scanners
+astral_rift_event = {
+	id = MAR_starless_rift_event.50
+	title = MAR_starless_rift_event.50.name
+	desc = MAR_starless_rift_event.50.desc
+	picture = GFX_evt_in_the_dark
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Fly up and see what it is made of
+	option = {
+		name = MAR_starless_rift_event.50.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.10 }
+	}
+	
+	# Set to max intensity!
+	option = {
+		name = MAR_starless_rift_event.50.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.55 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We set it to max intensity
+astral_rift_event = {
+	id = MAR_starless_rift_event.55
+	title = MAR_starless_rift_event.55.name
+	desc = MAR_starless_rift_event.55.desc
+	picture = GFX_evt_space_monster
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Flee
+	option = {
+		name = MAR_starless_rift_event.55.a
+		set_next_astral_rift_event = {
+			id = MAR_starless_rift_event.20
+			on_roll_failed = MAR_starless_rift_event.21
+			fail_probability = 0.01 # Should be less common. Not sure though.
+		}
+		#set_next_astral_rift_event = {
+		#	id = MAR_starless_rift_event.60
+		#	on_roll_failed = MAR_starless_rift_event.61
+		#	fail_probability = 0.01 # Should be less common. Not sure though.
+		#}
+	}
+	
+	# Continue to use the laser
+	option = {
+		name = MAR_starless_rift_event.55.b
+		set_astral_rift_flag = MAR_starless_skies_flee
+		set_next_astral_rift_event = {
+			id = MAR_starless_rift_event.65
+			on_roll_failed = MAR_starless_rift_event.66
+			fail_probability = @default_failure_probability
+		}
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Flee (success)
+#astral_rift_event = {
+#	id = MAR_starless_rift_event.60
+#	title = MAR_starless_rift_event.60.name
+#	desc = MAR_starless_rift_event.60.desc
+#	picture = GFX_evt_small_space_battle
+#	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+#	difficulty = @astral_rift_initial_difficulty
+#	astral_rift = yes
+#	is_triggered_only = yes
+#	
+#	# Good
+#	option = {
+#		name = MAR_starless_rift_event.60.a
+#		explorer = {
+#			astral_thread_large_reward = yes
+#		}
+#		finish_astral_rift = yes
+#	}
+#}
+
+# Flee (Failure)
+#astral_rift_event = {
+#	id = MAR_starless_rift_event.61
+#	title = MAR_starless_rift_event.61.name
+#	desc = MAR_starless_rift_event.61.desc
+#	picture = GFX_evt_small_space_battle
+#	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+#	difficulty = @astral_rift_initial_difficulty
+#	astral_rift = yes
+#	is_triggered_only = yes
+#	
+#	# Bad
+#	option = {
+#		name = MAR_starless_rift_event.61.a
+#		# Kill scientist
+#		fleet = {
+#			kill_leader = {
+#				show_notification = yes
+#			}
+#		}
+#		finish_astral_rift = yes
+#	}
+#}
+
+# Continue to use the laser (Success)
+astral_rift_event = {
+	id = MAR_starless_rift_event.65
+	title = MAR_starless_rift_event.65.name
+	desc = MAR_starless_rift_event.65.desc
+	picture = GFX_evt_astral_rift_ancient_battlegrounds_leviathan	
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Sample its blood
+	option = {
+		name = MAR_starless_rift_event.65.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.70 }
+	}
+	
+	# Cut off its head
+	option = {
+		name = MAR_starless_rift_event.65.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.75 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Continue to use the laser (Failure)
+astral_rift_event = {
+	id = MAR_starless_rift_event.66
+	title = MAR_starless_rift_event.66.name
+	desc = MAR_starless_rift_event.66.desc
+	picture = GFX_evt_space_monster
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Bad
+	option = {
+		name = MAR_starless_rift_event.66.a
+		# Kill scientist
+		fleet = {
+			kill_leader = {
+				show_notification = yes
+			}
+			destroy_fleet = this
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Sample its blood
+astral_rift_event = {
+	id = MAR_starless_rift_event.70
+	title = MAR_starless_rift_event.70.name
+	desc = MAR_starless_rift_event.70.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Splice it in!
+	option = {
+		name = MAR_starless_rift_event.70.a
+		custom_tooltip = MAR_starless_rift_event.70.a.tooltip #distar.3055.a.tooltip #
+		trigger = {
+			explorer = {
+				species = {
+					is_mechanical_species = no
+				}
+			}
+		}
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		# Get flag and apply to all pops of main species
+		explorer = {
+			hidden_effect = {
+				set_country_flag = MAR_lightblood_sample
+			}
+			modify_species = {
+				species = this
+				add_trait = trait_MAR_lightblood
+			}
+			change_dominant_species = {
+				species = last_created_species
+			}
+			while = {
+				limit = {
+					any_owned_pop = {
+						is_subspecies = root
+						NOT = { has_trait = trait_MAR_lightblood }
+					}
+				}
+				random_owned_pop = {
+					limit = {
+						is_subspecies = root
+						NOT = { has_trait = trait_MAR_lightblood }
+					}
+					root = {
+						modify_species = {
+							species = prev.species
+							add_trait = trait_MAR_lightblood
+						}
+					}
+				}
+			}
+		}
+		finish_astral_rift = yes
+	}
+	
+	# Let's just hold onto it for now
+	option = {
+		name = MAR_starless_rift_event.70.b
+		custom_tooltip = MAR_starless_rift_event.70.b.tooltip
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		# Get flag
+		hidden_effect = {
+			explorer = {
+				set_country_flag = MAR_lightblood_sample
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Cut off its head
+astral_rift_event = {
+	id = MAR_starless_rift_event.75
+	title = MAR_starless_rift_event.75.name
+	desc = MAR_starless_rift_event.75.desc
+	picture = GFX_evt_victorious_army
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Good
+	option = {
+		name = MAR_starless_rift_event.75.a
+		# Get modifier / Trophy
+		explorer = {
+			astral_thread_large_reward = yes
+			add_relic = r_MAR_lightbeast_head
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We sample the local flora
+astral_rift_event = {
+	id = MAR_starless_rift_event.80
+	title = MAR_starless_rift_event.80.name
+	desc = MAR_starless_rift_event.80.desc
+	picture = GFX_evt_circuitry_modification
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Red-shifted light
+	option = {
+		name = MAR_starless_rift_event.80.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.85 }
+	}
+	
+	# Blue-shifted light
+	option = {
+		name = MAR_starless_rift_event.80.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.81 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Blue-shifted light
+astral_rift_event = {
+	id = MAR_starless_rift_event.81
+	title = MAR_starless_rift_event.81.name
+	desc = MAR_starless_rift_event.81.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Bad
+	option = {
+		name = MAR_starless_rift_event.81.a
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We shine red wavelengths on them
+astral_rift_event = {
+	id = MAR_starless_rift_event.85
+	title = MAR_starless_rift_event.85.name
+	desc = MAR_starless_rift_event.85.desc
+	picture = GFX_evt_baol_devolved
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We sample the flowers
+	option = {
+		name = MAR_starless_rift_event.85.a
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.90 }
+	}
+	
+	# We observe the flowers
+	option = {
+		name = MAR_starless_rift_event.85.b
+		set_next_astral_rift_event = { id = MAR_starless_rift_event.95 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
+
+# Sample flowers
+astral_rift_event = {
+	id = MAR_starless_rift_event.90
+	title = MAR_starless_rift_event.90.name
+	desc = MAR_starless_rift_event.90.desc
+	picture = GFX_evt_aggressive_flora
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Interesting
+	option = {
+		name = MAR_starless_rift_event.90.a
+		# Gain plant light-trees decision
+		custom_tooltip = MAR_starless_rift_event.90.a.tooltip
+		explorer = {
+			set_country_flag = MAR_lightplant_seeds
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Observe Flowers
+astral_rift_event = {
+	id = MAR_starless_rift_event.95
+	title = MAR_starless_rift_event.95.name
+	desc = MAR_starless_rift_event.95.desc
+	picture = GFX_evt_aggressive_flora
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Guess we got a trait
+	option = {
+		name = MAR_starless_rift_event.95.a
+		# Lead scientist gains special trait.
+		fleet = {
+			leader = {
+				add_trait = leader_trait_MAR_life_is_so_short
+			}
+		}
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		finish_astral_rift = yes
+	}
+}

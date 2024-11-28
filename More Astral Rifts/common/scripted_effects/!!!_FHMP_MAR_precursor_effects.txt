@@ -1,0 +1,12 @@
+##################################
+# Precursor Rift Effects
+##################################
+
+FHMP_MAR_Precursor_Selection_Effect = {
+	add_monthly_resource_mult = {
+		resource = unity
+		value = @tier3unityreward
+		min = @tier3unitymin
+		max = @tier3unitymax
+	}
+}

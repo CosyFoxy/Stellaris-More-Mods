@@ -1,0 +1,32 @@
+# MAR_on_actions
+# By Metallichydra
+
+# Executed when an astral rift event is about to be fired
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+# FROMFROM = Exploring Fleet
+on_astral_rift_pre_event_fire = {
+	events = {
+		MAR_rift_event.1		# Setup event description flags
+	}
+}
+
+# Executed when the exploration of an astral rift starts
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+# FROMFROM = Exploring Fleet
+on_astral_rift_exploration_start = {
+	events = {
+		MAR_rift_event.2 # Lock rift if relic rift
+	}
+}
+
+# Executed when the exploration of an astral rift ends
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+# FROMFROM = Exploring Fleet
+on_astral_rift_exploration_complete = {
+	events = {
+		MAR_rift_event.3		# Unlock rift if it was possible to get a relic from it but we didn't
+	}
+}

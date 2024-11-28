@@ -1,0 +1,4 @@
+defined_text = {
+ 	name = Volgan_Temp
+ 	value = MAR_frozen_rift_temperature
+}

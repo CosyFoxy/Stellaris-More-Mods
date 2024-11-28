@@ -1,0 +1,656 @@
+# The Frozen World
+# By Metallichydra
+
+namespace = MAR_frozen_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+#	set_next_astral_rift_event = {
+#		id = astral_rift.1325
+#		on_roll_failed = astral_rift.1330
+#		fail_probability = @default_failure_probability
+#	}
+
+# Too much like whiteout? Cut the flying part?
+
+astral_rift_event = {
+	id = MAR_frozen_rift_event.1
+	title = MAR_frozen_rift_event.1.name
+	desc = MAR_frozen_rift_event.1.desc
+	picture = GFX_evt_society_research
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Turn on the Terminal
+	option = {
+		name = MAR_frozen_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.5 }
+	}
+	# Open the door
+	option = {
+		name = MAR_frozen_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.50 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Turn on the Terminal
+astral_rift_event = {
+	id = MAR_frozen_rift_event.5
+	title = MAR_frozen_rift_event.5.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.5.desc.volgan }
+				default = { text = MAR_frozen_rift_event.5.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Recover the log files
+	option = {
+		name = MAR_frozen_rift_event.5.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.6 }
+	}
+	# Open "Pylons"
+	option = {
+		name = MAR_frozen_rift_event.5.b
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.10 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Recover the logs
+astral_rift_event = {
+	id = MAR_frozen_rift_event.6
+	title = MAR_frozen_rift_event.6.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.6.desc.volgan }
+				default = { text = MAR_frozen_rift_event.6.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# The logs do not contain much. Unfortunately our recovering methods led to the database burning down or something, who knows?
+	option = {
+		name = MAR_frozen_rift_event.6.a
+		# gain physics research
+		explorer = {
+			astral_thread_small_reward = yes
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Open "Pylons"
+astral_rift_event = {
+	id = MAR_frozen_rift_event.10
+	title = MAR_frozen_rift_event.10.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_set_temp = { text = MAR_frozen_rift_event.10.desc.temp }
+				MAR_volgan = { text = MAR_frozen_rift_event.10.desc.volgan }
+				default = { text = MAR_frozen_rift_event.10.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		# Set variable "temperature" if not set yet
+		if = {
+			limit = {
+				NOT = { is_variable_set = MAR_frozen_rift_temperature }
+			}
+			set_variable = {
+				which = MAR_frozen_rift_temperature
+				value = -40
+			}
+		}
+	}
+	
+	# Start Program
+	option = {
+		name = MAR_frozen_rift_event.10.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.15 }
+	}
+	# Turn up temperature by 10 degrees
+	option = {
+		name = MAR_frozen_rift_event.10.b
+		allow = {
+			custom_tooltip = {
+				fail_text = MAR_frozen_rift_event.10.b.trigger_tt # The slider cannot go up by more than this
+				NOT = {
+					check_variable = {
+						which = MAR_frozen_rift_temperature
+						value = 50
+					}
+				}
+			}
+		}
+		# Change variable by +10
+		change_variable = { which = MAR_frozen_rift_temperature value = 10 }
+		set_astral_rift_flag = MAR_set_temp
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.10 }
+	}
+	# Turn down temperature by 10 degrees
+	option = {
+		name = MAR_frozen_rift_event.10.c
+		allow = {
+			custom_tooltip = {
+				fail_text = MAR_frozen_rift_event.10.c.trigger_tt # The slider cannot go down by more than this
+				NOT = {
+					check_variable = {
+						which = MAR_frozen_rift_temperature
+						value = -60
+					}
+				}
+			}
+		}
+		# Change variable by -10
+		subtract_variable = { which = MAR_frozen_rift_temperature value = 10 }
+		set_astral_rift_flag = MAR_set_temp
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.10 }
+	}
+}
+
+# Recover the logs
+astral_rift_event = {
+	id = MAR_frozen_rift_event.15
+	title = MAR_frozen_rift_event.15.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.15.desc.volgan }
+				default = { text = MAR_frozen_rift_event.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#if = {
+		#	limit = {
+		#		check_variable = { which = MAR_frozen_rift_temperature value < -45 }
+		#		set_astral_rift_flag = MAR_frozen_frozen_terraforming
+		#	}
+		#}
+		if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = -40 }
+			}
+			set_astral_rift_flag = MAR_frozen_arctic_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = -30 }
+			}
+			set_astral_rift_flag = MAR_frozen_arctic_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = -20 }
+			}
+			set_astral_rift_flag = MAR_frozen_tundra_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = -10 }
+			}
+			set_astral_rift_flag = MAR_frozen_tundra_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 0 }
+			}
+			set_astral_rift_flag = MAR_frozen_alpine_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 10 }
+			}
+			set_astral_rift_flag = MAR_frozen_ocean_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 20 }
+			}
+			set_astral_rift_flag = MAR_frozen_continental_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 30 }
+			}
+			set_astral_rift_flag = MAR_frozen_tropical_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 40 }
+			}
+			set_astral_rift_flag = MAR_frozen_savannah_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 50 }
+			}
+			set_astral_rift_flag = MAR_frozen_desert_terraforming
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = MAR_frozen_rift_temperature value = 60 }
+			}
+			set_astral_rift_flag = MAR_frozen_arid_terraforming
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { host_has_dlc = "Aquatics Species Pack" } }
+				every_system = {
+					every_system_planet = {
+						limit = {
+							is_planet_class = pc_frozen
+							NOR = {
+								has_deposit = d_nanites_deposit
+								has_anomaly = yes
+								has_modifier = frozen_terraforming_candidate
+							}
+							planet_size > 9
+							planet_size < 31
+						}
+						random_list = {
+							100 = {}
+							1 = { # Same as Hydrocentric
+								add_modifier = { modifier = frozen_terraforming_candidate }
+								complex_trigger_modifier = {
+									trigger = check_galaxy_setup_value
+									parameters = {
+										setting = habitable_worlds_scale
+									}
+									mode = factor
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	# The temperature drops/climbs to the desired one and we get a blueprint / collected data from the experiment, which allow us to replicate it should we so desire
+	option = {
+		name = {
+			trigger = { NOT = { has_astral_rift_flag = MAR_frozen_frozen_terraforming } }
+			text = MAR_frozen_rift_event.15.a # Splendid
+		}
+		name = {
+			trigger = { has_astral_rift_flag = MAR_frozen_frozen_terraforming }
+			text = MAR_frozen_rift_event.15.b # Well, that's useless
+		}
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+		switch = {
+			trigger = has_astral_rift_flag
+			MAR_frozen_arctic_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.arctic.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_arctic_terraforming
+				}
+			}
+			MAR_frozen_tundra_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.tundra.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_tundra_terraforming
+				}
+			}
+			MAR_frozen_alpine_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.alpine.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_alpine_terraforming
+				}
+			}
+			MAR_frozen_ocean_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.ocean.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_ocean_terraforming
+				}
+			}
+			MAR_frozen_continental_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.continental.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_continental_terraforming
+				}
+			}
+			MAR_frozen_tropical_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.tropical.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_tropical_terraforming
+				}
+			}
+			MAR_frozen_savannah_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.savannah.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_savannah_terraforming
+				}
+			}
+			MAR_frozen_desert_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.desert.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_desert_terraforming
+				}
+			}
+			MAR_frozen_arid_terraforming = {
+				custom_tooltip = MAR_frozen_rift_event.15.a.arid.tt
+				explorer = {
+					set_country_flag = MAR_frozen_to_arid_terraforming
+				}
+			}
+			default = { custom_tooltip = MAR_frozen_rift_event.15.a.frozen.tt }
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Open the door
+astral_rift_event = {
+	id = MAR_frozen_rift_event.50
+	title = MAR_frozen_rift_event.50.name
+	desc = MAR_frozen_rift_event.50.desc
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Cut it open
+	option = {
+		name = MAR_frozen_rift_event.50.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.55 }
+	}
+	# Turn on the terminal
+	option = {
+		name = MAR_frozen_rift_event.50.b
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.5 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We have opened the door
+astral_rift_event = {
+	id = MAR_frozen_rift_event.55
+	title = MAR_frozen_rift_event.55.name
+	desc = MAR_frozen_rift_event.55.desc
+	picture = GFX_evt_outpost
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Explore the outside / Splendid
+	option = {
+		name = MAR_frozen_rift_event.55.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.60 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We see towers and ice
+astral_rift_event = {
+	id = MAR_frozen_rift_event.60
+	title = MAR_frozen_rift_event.60.name
+	desc = MAR_frozen_rift_event.60.desc
+	picture = GFX_evt_MAR_frozen_world
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Recover some ice
+	option = {
+		name = MAR_frozen_rift_event.60.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.61 }
+	}
+	
+	# Go to those towers
+	option = {
+		name = MAR_frozen_rift_event.60.b
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.65 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Recover some ice
+astral_rift_event = {
+	id = MAR_frozen_rift_event.61
+	title = MAR_frozen_rift_event.61.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.61.desc.volgan }
+				default = { text = MAR_frozen_rift_event.61.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_MAR_frozen_world
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# The ice is not very spectacular, but it seems like the planet was once very lush, and it only turned into this frozen wasteland over a few years.
+	option = {
+		name = MAR_frozen_rift_event.61.a
+		# gain physics research
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We have reached the towers
+astral_rift_event = {
+	id = MAR_frozen_rift_event.65
+	title = MAR_frozen_rift_event.65.name
+	desc = MAR_frozen_rift_event.65.desc
+	picture = GFX_evt_outpost
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Examine the terminal
+	option = {
+		name = MAR_frozen_rift_event.65.a
+		set_next_astral_rift_event = { id = MAR_frozen_rift_event.70 }
+	}
+	
+	# Drill through the ice
+	option = {
+		name = MAR_frozen_rift_event.65.b
+		set_next_astral_rift_event = {
+			id = MAR_frozen_rift_event.75
+			on_roll_failed = MAR_frozen_rift_event.76
+			fail_probability = @default_failure_probability
+		}
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Examine the terminal
+astral_rift_event = {
+	id = MAR_frozen_rift_event.70
+	title = MAR_frozen_rift_event.70.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.70.desc.volgan }
+				default = { text = MAR_frozen_rift_event.70.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_frozen_rift_event.70.a
+		# gain physics research
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Drill through the ice (Success)
+astral_rift_event = {
+	id = MAR_frozen_rift_event.75
+	title = MAR_frozen_rift_event.75.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.75.desc.volgan }
+				default = { text = MAR_frozen_rift_event.75.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_ice_asteroids
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We manage to get the terminals back with us
+	option = {
+		name = MAR_frozen_rift_event.75.a
+		# gain physics research
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Drill through the ice (Fail)
+astral_rift_event = {
+	id = MAR_frozen_rift_event.76
+	title = MAR_frozen_rift_event.76.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_volgan = { text = MAR_frozen_rift_event.76.desc.volgan }
+				default = { text = MAR_frozen_rift_event.76.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_icelocked_settlement
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We get nothing
+	option = {
+		name = MAR_frozen_rift_event.76.a
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+		finish_astral_rift = yes
+	}
+}

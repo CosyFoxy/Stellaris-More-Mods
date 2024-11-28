@@ -1,0 +1,30 @@
+decision_MAR_lightplanting = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_animal_wildlife
+
+	resources = {
+		category = decisions
+		cost = {
+			astral_threads = 100
+		}
+	}
+
+	potential = {
+		owner = {
+			has_country_flag = MAR_lightplant_seeds
+		}
+		NOT = { has_modifier = MAR_lightbuds }
+	}
+
+	effect = {
+		add_modifier = {
+			modifier = MAR_lightbuds
+			days = -1
+		}
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}

@@ -1,0 +1,329 @@
+# Clockstopper
+# By Metallichydra
+
+namespace = MAR_clockstopper_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+astral_rift_event = {
+	id = MAR_clockstopper_rift_event.1
+	title = MAR_clockstopper_rift_event.1.name
+	desc = MAR_clockstopper_rift_event.1.desc
+	picture = GFX_evt_excavation_team
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Watch it
+	option = {
+		name = MAR_clockstopper_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.10 }
+	}
+	
+	# Dismantle it and examine the sand
+	option = {
+		name = MAR_clockstopper_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.11 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_clockstopper_rift_event.10
+	title = MAR_clockstopper_rift_event.10.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_clockstopper_observed_3_times = { text = MAR_clockstopper_rift_event.10.desc.3 }
+				MAR_clockstopper_observed_2_times = { text = MAR_clockstopper_rift_event.10.desc.2 }
+				MAR_clockstopper_observed_1_times = { text = MAR_clockstopper_rift_event.10.desc.1 }
+				default = { text = MAR_clockstopper_rift_event.10.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_excavation_team
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		switch = {
+			trigger = has_astral_rift_flag
+			MAR_clockstopper_observed_3_times = { }
+			MAR_clockstopper_observed_2_times = {
+				explorer = {
+					add_monthly_resource_mult = {
+						resource = engineering_research
+						value = @tier1researchreward
+						min = @tier1researchmin
+						max = @tier1researchmax
+					}
+				}
+			}
+			MAR_clockstopper_observed_1_times = { }
+			default = { }
+		}
+	}
+	
+	# Try flipping it
+	option = {
+		name = MAR_clockstopper_rift_event.10.a
+		set_astral_rift_flag = MAR_clockstopper_flipped
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.15 }
+	}
+	
+	# Observe it
+	option = {
+		name = {
+			trigger = {
+				switch = {
+					trigger = has_astral_rift_flag
+					MAR_clockstopper_observed_3_times = { text = MAR_clockstopper_rift_event.10.b.3 }
+					MAR_clockstopper_observed_2_times = { text = MAR_clockstopper_rift_event.10.b.2 }
+					MAR_clockstopper_observed_1_times = { text = MAR_clockstopper_rift_event.10.b.1 }
+					default = { text = MAR_clockstopper_rift_event.10.b.default }
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = MAR_clockstopper_rift_event.10.b.trigger_tt # Okay, we have observed it enough as is
+				NOT = { has_astral_rift_flag = MAR_clockstopper_observed_3_times }
+			}
+		}
+		# Set Flags
+		hidden_effect = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_clockstopper_observed_2_times = { set_astral_rift_flag = MAR_clockstopper_observed_3_times }
+				MAR_clockstopper_observed_1_times = { set_astral_rift_flag = MAR_clockstopper_observed_2_times }
+				default = { set_astral_rift_flag = MAR_clockstopper_observed_1_times }
+			}
+		}
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.10 }
+	}
+	
+	# Dismantle it and examine the sand
+	option = {
+		name = MAR_clockstopper_rift_event.10.c
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.11 }
+	}
+	
+	# Dismantle it and examine the mechanism
+	option = {
+		name = MAR_clockstopper_rift_event.10.d
+		trigger = {
+			has_astral_rift_flag = MAR_clockstopper_observed_1_times
+		}
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.12 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Dismantled and examined Sand
+astral_rift_event = {
+	id = MAR_clockstopper_rift_event.11
+	title = MAR_clockstopper_rift_event.11.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_clockstopper_unflipped_hourglass = { text = MAR_clockstopper_rift_event.11.desc.unflipped }
+				MAR_clockstopper_flipped = { text = MAR_clockstopper_rift_event.11.desc.flipped }
+				default = { text = MAR_clockstopper_rift_event.11.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Guess we're done here (Although the sand does have some interesting properties)
+	option = {
+		name = MAR_clockstopper_rift_event.11.a
+		# Gain Nothing
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		if = {
+			limit = {
+				has_astral_rift_flag = MAR_clockstopper_flipped
+			}
+			add_modifier = {
+				modifier = MAR_clockstopper_timesand
+				days = -1
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Dismantled and examined Mechanism
+astral_rift_event = {
+	id = MAR_clockstopper_rift_event.12
+	title = MAR_clockstopper_rift_event.12.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_clockstopper_flipped = { text = MAR_clockstopper_rift_event.12.desc.flipped }
+				default = { text = MAR_clockstopper_rift_event.12.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_engineering_bay
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Guess we're done here
+	option = {
+		name = MAR_clockstopper_rift_event.12.a
+		# Gain some engineering research
+		explorer = {
+			astral_thread_small_reward = yes
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We tried flipping it
+astral_rift_event = {
+	id = MAR_clockstopper_rift_event.15
+	title = MAR_clockstopper_rift_event.15.name.default
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_clockstopper_unflipped_hourglass = { text = MAR_clockstopper_rift_event.15.desc.unflipped }
+				default = { text = MAR_clockstopper_rift_event.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_zro_5
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Unflip it! Unflip it!
+	option = {
+		name = MAR_clockstopper_rift_event.15.a
+		trigger = {
+			NOT = { has_astral_rift_flag = MAR_clockstopper_unflipped_hourglass }
+		}
+		set_astral_rift_flag = MAR_clockstopper_unflipped_hourglass
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.15 }
+	}
+	
+	# Collect the sand
+	#option = {
+	#	name = MAR_clockstopper_rift_event.15.b
+	#	set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.20 }
+	#}
+	
+	# Dismantle it and examine the sand
+	option = {
+		name = MAR_clockstopper_rift_event.15.c
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.11 }
+	}
+	
+	# Extract hourglass
+	option = {
+		name = MAR_clockstopper_rift_event.15.d
+		set_next_astral_rift_event = { id = MAR_clockstopper_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Collected the sand
+#astral_rift_event = {
+#	id = MAR_clockstopper_rift_event.20
+#	title = MAR_clockstopper_rift_event.20.name
+#	desc = MAR_clockstopper_rift_event.20.desc
+#	picture = GFX_evt_small_space_battle
+#	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+#	difficulty = @astral_rift_initial_difficulty
+#	astral_rift = yes
+#	is_triggered_only = yes
+#	
+#	# Well, guess we have sand now
+#	option = {
+#		name = MAR_clockstopper_rift_event.20.a
+#		# Add gray sand modifiers
+#		explorer = {
+#			astral_thread_small_reward = yes
+#			add_modifier = {
+#				modifier = MAR_clockstopper_gray_sand
+#				days = -1
+#				}
+#			}
+#		}
+#		finish_astral_rift = yes
+#	}
+#}
+
+# Extracted hourglass
+astral_rift_event = {
+	id = MAR_clockstopper_rift_event.25
+	title = MAR_clockstopper_rift_event.25.name
+	desc = MAR_clockstopper_rift_event.25.desc
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We got a relic!
+	option = {
+		name = MAR_clockstopper_rift_event.25.a
+		# Add hourglass relic
+		explorer = {
+			astral_thread_large_reward = yes
+			add_relic = r_MAR_clockstopper
+		}
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}

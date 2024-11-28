@@ -1,0 +1,628 @@
+# Stairs of Infinity
+# By Metallichydra
+
+namespace = MAR_stairs_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.1
+	title = MAR_stairs_rift_event.1.name
+	desc = MAR_stairs_rift_event.1.desc
+	picture = GFX_evt_astral_rift_tower_invitation
+	show_sound = ap_rift_event_0_astral_wonder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Use the Sphere to follow the stairs
+	option = {
+		name = MAR_stairs_rift_event.1.a
+		hidden_effect = {
+			set_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.20 }
+	}
+	
+	# Exit the sphere and walk up those stairs
+	option = {
+		name = MAR_stairs_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.2 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.2
+	title = MAR_stairs_rift_event.2.name
+	desc = MAR_stairs_rift_event.2.desc
+	picture = GFX_evt_astral_rift_tower_invitation
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_transition_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.3 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.3
+	title = MAR_stairs_rift_event.3.name
+	desc = MAR_stairs_rift_event.3.desc
+	picture = GFX_evt_atmospheric_flight
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.4 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.4
+	title = MAR_stairs_rift_event.4.name
+	desc = MAR_stairs_rift_event.4.desc
+	picture = GFX_evt_atmospheric_entry
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.5 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.5
+	title = MAR_stairs_rift_event.5.name
+	desc = MAR_stairs_rift_event.5.desc
+	picture = GFX_evt_atmospheric_entry
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.6 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.6
+	title = MAR_stairs_rift_event.6.name
+	desc = MAR_stairs_rift_event.6.desc
+	picture = GFX_evt_MAR_starsky
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.8 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+#astral_rift_event = {
+#	id = MAR_stairs_rift_event.7
+#	title = MAR_stairs_rift_event.7.name
+#	desc = MAR_stairs_rift_event.7.desc
+#	picture = GFX_evt_MAR_orbit
+#	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+#	difficulty = @astral_rift_initial_difficulty
+#	astral_rift = yes
+#	is_triggered_only = yes
+#	
+#	# Continue
+#	option = {
+#		name = MAR_stairs_rift_event.2.a
+#		hidden_effect = {
+#			change_variable = { which = NumStepsClimbed value = 1 }
+#		}
+#		set_next_astral_rift_event = { id = MAR_stairs_rift_event.8 }
+#	}
+#	
+#	# Go back down
+#	option = {
+#		name = MAR_stairs_rift_event.2.b
+#		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+#	}
+#	
+#	after = {
+#		explorer = {
+#			astral_thread_small_reward = yes
+#		}
+#	}
+#}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.8
+	title = MAR_stairs_rift_event.8.name
+	desc = MAR_stairs_rift_event.8.desc
+	picture = GFX_evt_MAR_orbit
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.9 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.9
+	title = MAR_stairs_rift_event.9.name
+	desc = MAR_stairs_rift_event.9.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.10 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.10
+	title = MAR_stairs_rift_event.10.name
+	desc = MAR_stairs_rift_event.10.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.11 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.11
+	title = MAR_stairs_rift_event.11.name
+	desc = MAR_stairs_rift_event.11.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.13 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+#astral_rift_event = {
+#	id = MAR_stairs_rift_event.12
+#	title = MAR_stairs_rift_event.12.name
+#	desc = MAR_stairs_rift_event.12.desc
+#	picture = GFX_evt_small_space_battle
+#	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+#	difficulty = @astral_rift_initial_difficulty
+#	astral_rift = yes
+#	is_triggered_only = yes
+#	
+#	# Continue
+#	option = {
+#		name = MAR_stairs_rift_event.2.a
+#		hidden_effect = {
+#			change_variable = { which = NumStepsClimbed value = 1 }
+#		}
+#		set_next_astral_rift_event = { id = MAR_stairs_rift_event.13 }
+#	}
+#	
+#	# Go back down
+#	option = {
+#		name = MAR_stairs_rift_event.2.b
+#		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+#	}
+#	
+#	after = {
+#		explorer = {
+#			astral_thread_small_reward = yes
+#		}
+#	}
+#}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.13
+	title = MAR_stairs_rift_event.13.name
+	desc = MAR_stairs_rift_event.13.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.2.a
+		hidden_effect = {
+			change_variable = { which = NumStepsClimbed value = 1 }
+		}
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.14 }
+	}
+	
+	# Go back down
+	option = {
+		name = MAR_stairs_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.25 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.14
+	title = MAR_stairs_rift_event.14.name
+	desc = MAR_stairs_rift_event.14.desc
+	picture = GFX_evt_astral_rift_tower_invitation
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# I guess that's it
+	option = {
+		name = MAR_stairs_rift_event.14.a
+		leader = {
+			exile_leader_as = MAR_stairs_rift_lost_explorer@prev.explorer
+		}
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+		hidden_effect = {
+			explorer = {
+				country_event = { id = MAR_stairs_rift_event.30 days = 7200 scopes = { from = prev.fleet } } # Scientist returns, enlightened
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.20
+	title = MAR_stairs_rift_event.20.name
+	desc = MAR_stairs_rift_event.20.desc
+	picture = GFX_evt_astral_rift_tower_invitation
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_transition_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue
+	option = {
+		name = MAR_stairs_rift_event.20.a
+		set_next_astral_rift_event = { id = MAR_stairs_rift_event.21 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_stairs_rift_event.21
+	title = MAR_stairs_rift_event.21.name
+	desc = MAR_stairs_rift_event.21.desc
+	picture = GFX_evt_atmospheric_entry
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Interesting but useless
+	option = {
+		name = MAR_stairs_rift_event.21.a
+		# Give Physics Research
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Gone back down
+astral_rift_event = {
+	id = MAR_stairs_rift_event.25
+	title = MAR_stairs_rift_event.25.name
+	desc = MAR_stairs_rift_event.25.desc
+	picture = GFX_evt_astral_rift_tower_invitation
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			multiply_variable = { which = NumStepsClimbed value = 3 }
+		}
+	}
+	
+	# Interesting
+	option = {
+		name = MAR_stairs_rift_event.25.a
+		# Give Physics Research
+		while = {
+			count = NumStepsClimbed
+			explorer = {
+				astral_thread_large_reward = yes
+				add_monthly_resource_mult = {
+					resource = physics_research
+					value = 1
+					min = 0
+					max = 10000000
+				}
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Our missing scientist returns
+country_event = {
+	id = MAR_stairs_rift_event.30
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				exists = from
+				from = {
+					NOT = { exists = leader }
+				}
+			}
+			from = {
+				save_event_target_as = returning_ship
+			}
+		}
+		else_if = {
+			limit = {
+				any_owned_fleet = {
+					is_ship_class = shipclass_science_ship
+					NOT = { exists = leader	}
+				}
+			}
+			random_owned_fleet = {
+				limit = {
+					is_ship_class = shipclass_science_ship
+					NOT = { exists = leader	}
+				}
+				save_event_target_as = returning_ship
+			}
+		}
+		else = {
+			create_fleet = {
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = random
+						random_existing_design = science
+					}
+					set_fleet_stance = evasive
+					set_location = prev.capital_scope.star
+					every_owned_ship = {
+						set_disabled = yes
+					}
+					set_fleet_flag = temporary_fleet
+					save_event_target_as = returning_ship
+				}
+			}
+		}
+		event_target:returning_ship = {
+			set_leader = MAR_stairs_rift_lost_explorer@prev
+			fleet_event = { id = MAR_stairs_rift_event.35 }
+		}
+	}
+}
+
+fleet_event = {
+	id = MAR_stairs_rift_event.35 #astral_rift.140
+	title = MAR_stairs_rift_event.35.name
+	desc = MAR_stairs_rift_event.35.desc
+	picture = GFX_evt_astral_rift_tower_invitation
+	show_sound = event_robot_encounter
+	is_triggered_only = yes
+
+	option = {
+		name = FASCINATING
+		leader = {
+			freeze_leader_age = no
+			add_trait = MAR_leader_trait_stairs
+			add_trait = leader_trait_rift_warped
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				has_fleet_flag = temporary_fleet
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+			}
+		}
+	}
+}

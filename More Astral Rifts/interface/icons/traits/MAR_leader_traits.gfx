@@ -1,0 +1,16 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_leader_trait_MAR_stairs"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/MAR_stairs.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_trait_MAR_life_is_so_short"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/MAR_so_short.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_trait_MAR_heroic_destiny"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/MAR_heroic_destiny.dds"
+	}
+}

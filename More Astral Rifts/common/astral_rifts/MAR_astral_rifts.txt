@@ -1,0 +1,156 @@
+# MAR_astral_rifts
+# By Metallichydra
+
+
+# Museum of All
+MAR_museum_of_all = {
+	name = astral_rift_MAR_museum_of_all
+	event_weight = {
+		weight = 1
+	}
+	# Must make new astral_planes.3 and astral_planes.4 events
+	#event_weight = {
+	#	weight = 1
+	#	inline_script = {
+	#		script = astral_rift/relic_weight_modifier
+	#		RELIC = r_MAR_plexi_log
+	#	}
+	#}
+	flags = { MAR_rift }
+	# can_reward_MAR_relic r_MAR_plexi_log
+	event = MAR_museum_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# The Frozen World
+MAR_the_frozen_world = {
+	name = astral_rift_MAR_the_frozen_world
+	event_weight = {
+		weight = 1
+	}
+	flags = { MAR_rift }
+	event = MAR_frozen_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# The Werediran Signal (Idea for rewards: Interference Tradition Tree (Gives bonuses to encryption, decryption, espionage and cloaking.) / Werediran tower technology / Bonus to Werediran Towers / Reduction to Werediran Essence relic cooldown
+MAR_werediran_signal = {
+	name = astral_rift_MAR_werediran_signal
+	event_weight = {
+		weight = 0.2
+		modifier = {
+			factor = 0
+			AND = {
+				has_global_flag = werediran_started
+				NOT = { has_country_flag = werediran_intro }
+			}
+		}
+		modifier = {
+			factor = 0
+			has_global_flag = FHMP_werediran_finished
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = MAR_werediran_rift_closed
+				has_global_flag = MAR_werediran_rift_being_explored
+			}
+		}
+	}
+	flags = { MAR_rift MAR_werediran_rift }
+	event = MAR_werediran_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# The Aktion House
+
+# The Clockstopper
+MAR_clockstopper = {
+	name = astral_rift_MAR_clockstopper
+	event_weight = {
+		weight = 1
+		inline_script = {
+			script = astral_rift/relic_weight_modifier
+			RELIC = r_MAR_clockstopper
+		}
+	}
+	flags = { MAR_rift MAR_can_reward_relic r_MAR_clockstopper }
+	event = MAR_clockstopper_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# Starless Skies
+MAR_starless_skies = {
+	name = astral_rift_MAR_starless_skies
+	event_weight = {
+		weight = 1
+		inline_script = {
+			script = astral_rift/relic_weight_modifier
+			RELIC = r_MAR_lightbeast_head
+		}
+	}
+	flags = { MAR_rift MAR_can_reward_relic r_MAR_lightbeast_head }
+	event = MAR_starless_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# Godsand
+MAR_godsand = {
+	name = astral_rift_MAR_godsand
+	event_weight = {
+		weight = 1
+		inline_script = {
+			script = astral_rift/relic_weight_modifier
+			RELIC = r_MAR_godsand_remote
+		}
+	}
+	flags = { MAR_rift MAR_can_reward_relic r_MAR_godsand_remote }
+	event = MAR_godsand_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# The Valley
+MAR_valley = {
+	name = astral_rift_MAR_valley
+	event_weight = {
+		weight = 1
+	}
+	flags = { MAR_rift }
+	event = MAR_valley_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# Stairs to Infinity
+MAR_stairs = {
+	name = astral_rift_MAR_stairs
+	event_weight = {
+		weight = 1
+	}
+	flags = { MAR_rift }
+	event = MAR_stairs_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}

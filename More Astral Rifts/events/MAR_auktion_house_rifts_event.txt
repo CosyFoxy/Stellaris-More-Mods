@@ -1,0 +1,9 @@
+# The Auktion House
+# By Metallichydra
+
+# namespace = MAR_auktion_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization

@@ -1,0 +1,18 @@
+##################################
+# Scripted Effects
+##################################
+
+MAR_lightbeast_scale = {
+	icon = "GFX_specimen_MAR_lightbeast_scale"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = exceptional
+	}
+
+	triggered_country_modifier = {
+		mult = value:MAR_xeno_geology_specimens_modifiers_mult_floor
+		ship_cloaking_strength_add = 1
+	}
+}

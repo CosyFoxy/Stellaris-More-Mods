@@ -1,0 +1,19 @@
+# its own trigger
+has_hydras_more_astral_rifts_active = {
+    optimize_memory
+    always = yes
+}
+
+# More Astral Rifts
+
+has_lightbeast_head = {
+	has_relic = r_MAR_lightbeast_head
+}
+
+has_godsand_remote = {
+	has_relic = r_MAR_godsand_remote
+}
+
+has_clockstopper = {
+	has_relic = r_MAR_clockstopper
+}

@@ -1,0 +1,537 @@
+# The Werediran Signal
+# By Metallichydra
+
+namespace = MAR_werediran_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+astral_rift_event = {
+	id = MAR_werediran_rift_event.1
+	title = MAR_werediran_rift_event.1.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.1.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.1.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.1.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.1.desc.silent"
+				NOR = {
+					has_astral_rift_flag = MAR_werediran_progress
+					has_astral_rift_flag = MAR_werediran_finished
+				}
+			}
+		}
+	}
+	picture = GFX_evt_mysterious_signal
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Approach the radio dish
+	option = {
+		name = MAR_werediran_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.2 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_werediran_rift_event.2
+	title = MAR_werediran_rift_event.2.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.2.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.2.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.2.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.2.desc.silent"
+				NOR = {
+					has_astral_rift_flag = MAR_werediran_progress
+					has_astral_rift_flag = MAR_werediran_finished
+				}
+			}
+		}
+	}
+	picture = GFX_evt_engineering_bay
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Approach the alien
+	option = {
+		name = MAR_werediran_rift_event.2.a
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.3 }
+	}
+	# Observe from a distance
+	option = {
+		name = MAR_werediran_rift_event.2.b
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.5 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We talk to an alien
+astral_rift_event = {
+	id = MAR_werediran_rift_event.3
+	title = MAR_werediran_rift_event.3.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.3.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.3.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.3.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.3.desc.silent"
+				NOR = {
+					has_astral_rift_flag = MAR_werediran_progress
+					has_astral_rift_flag = MAR_werediran_finished
+				}
+			}
+		}
+	}
+	picture = GFX_evt_failed_observation
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Observe
+	option = {
+		name = MAR_werediran_rift_event.3.a
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.5 }
+	}
+	# Help Them (Reduce Difficulty/add clues)
+	option = {
+		name = MAR_werediran_rift_event.3.b
+		trigger = {
+			OR = {
+				has_astral_rift_flag = MAR_werediran_progress
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+		}
+		# Add reduced difficulty modifier
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.5 }
+	}
+	# Tell them it's dangerous
+	#option = {
+	#	name = MAR_werediran_rift_event.3.c
+	#	trigger = {
+	#		has_astral_rift_flag = MAR_werediran_finished
+	#	}
+	#	set_next_astral_rift_event = { id = MAR_werediran_rift_event.4 }
+	#}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We tell the alien it's dangerous
+astral_rift_event = {
+	id = MAR_werediran_rift_event.4
+	title = MAR_werediran_rift_event.4.name
+	desc = MAR_werediran_rift_event.4.desc.werediran
+	picture = GFX_evt_relic_world_building
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Observe
+	option = {
+		name = MAR_werediran_rift_event.4.a
+		set_astral_rift_flag = MAR_werediran_warning
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.5 }
+	}
+	# Leave
+	option = {
+		name = MAR_werediran_rift_event.4.b
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We observe them
+astral_rift_event = {
+	id = MAR_werediran_rift_event.5
+	title = MAR_werediran_rift_event.5.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.5.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.5.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.5.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.5.desc.silent"
+				NOR = {
+					has_astral_rift_flag = MAR_werediran_progress
+					has_astral_rift_flag = MAR_werediran_finished
+				}
+			}
+		}
+	}
+	picture = GFX_evt_mysterious_signal
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Pull out the sphere
+	option = {
+		name = MAR_werediran_rift_event.5.a
+		#hidden_effect = {
+		#	explorer = {
+		#		country_event = { id = MAR_werediran_rift_event.100 days = 1 } # We hear some static, then silence
+		#	}
+		#}
+		finish_astral_rift = yes
+	}
+	# Filter out signal
+	option = {
+		name = MAR_werediran_rift_event.5.b
+		set_next_astral_rift_event = {
+			id = MAR_werediran_rift_event.10
+			on_roll_failed = MAR_werediran_rift_event.11
+			fail_probability = @default_failure_probability
+		}
+	}
+	# Record Signal
+	option = {
+		name = MAR_werediran_rift_event.5.c
+		trigger = {
+			OR = {
+				has_astral_rift_flag = MAR_werediran_progress
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+		}
+		set_next_astral_rift_event = {
+			id = MAR_werediran_rift_event.6
+			on_roll_failed = MAR_werediran_rift_event.7
+			fail_probability = @default_failure_probability
+		}
+	}
+	# Communicate
+	#option = {
+	#	name = MAR_werediran_rift_event.5.d
+	#	trigger = {
+	#		has_astral_rift_flag = MAR_werediran_finished
+	#	}
+	#	set_next_astral_rift_event = { id = MAR_werediran_rift_event.20 }
+	#}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We record the signal (success)
+astral_rift_event = {
+	id = MAR_werediran_rift_event.6
+	title = MAR_werediran_rift_event.6.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.6.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.6.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.6.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+		}
+	}
+	picture = GFX_evt_intelligence_report
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We gain a copy of the signal, though we have no idea what it can be used for
+	option = {
+		name = MAR_werediran_rift_event.6.a
+		explorer = {
+			astral_thread_small_reward = yes
+			set_country_flag = MAR_werediran_recorded_signal
+			add_modifier = {
+				modifier = MAR_signal_recorded
+				days = -1
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We record the signal (Failure)
+astral_rift_event = {
+	id = MAR_werediran_rift_event.7
+	title = MAR_werediran_rift_event.7.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag # If currently doing the werediran chain, gain signal flag, if finished, gain werediran flag. If not any of these, the galaxy is silent, thus .silent
+				MAR_werediran_finished = { text = MAR_werediran_rift_event.7.desc.werediran }
+				default = { text = MAR_werediran_rift_event.7.desc.signal }
+			}
+		}
+	}
+	picture = GFX_evt_mysterious_signal
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We lose contact with our ship
+	option = {
+		name = MAR_werediran_rift_event.7.a
+		# Kill Leader
+		fleet = {
+			kill_leader = {
+				show_notification = yes
+			}
+			destroy_fleet = this
+		}
+		# Destroy Ship
+		#hidden_effect = {
+		#	explorer = {
+		#		country_event = { id = MAR_werediran_rift_event.101 days = 1 } # Come... Home...
+		#	}
+		#}
+		finish_astral_rift = yes
+	}
+}
+
+# We filter out the signal (success)
+astral_rift_event = {
+	id = MAR_werediran_rift_event.10
+	title = MAR_werediran_rift_event.10.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.10.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.10.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.10.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.10.desc.silent"
+				NOR = {
+					has_astral_rift_flag = MAR_werediran_progress
+					has_astral_rift_flag = MAR_werediran_finished
+				}
+			}
+		}
+	}
+	picture = GFX_evt_worrying_signal
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Accept Help / Listen
+	option = {
+		name = MAR_werediran_rift_event.10.a
+		trigger = {
+			NOR = {
+				has_astral_rift_flag = MAR_werediran_progress
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+		}
+		set_next_astral_rift_event = { id = MAR_werediran_rift_event.15 }
+	}
+	# Leave
+	option = {
+		name = MAR_werediran_rift_event.10.b
+		trigger = {
+			NOR = {
+				has_astral_rift_flag = MAR_werediran_progress
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+		}
+		finish_astral_rift = yes
+	}
+	# Called Home
+	option = {
+		name = MAR_werediran_rift_event.10.c
+		trigger = {
+			has_astral_rift_flag = MAR_werediran_progress
+		}
+		explorer = {
+			add_modifier = {
+				modifier = MAR_called_home
+				days = -1
+			}
+		}
+		finish_astral_rift = yes
+	}
+	# Go Home
+	option = {
+		name = MAR_werediran_rift_event.10.d
+		trigger = {
+			has_astral_rift_flag = MAR_werediran_finished
+		}
+		# Gain a large amount of unity
+		explorer = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier5unityreward
+				min = @tier5unitymin
+				max = @tier5unitymax
+			}
+		}
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We filter out the signal (Failure)
+astral_rift_event = {
+	id = MAR_werediran_rift_event.11
+	title = MAR_werediran_rift_event.11.name
+	desc = {
+		trigger = {
+			text = "MAR_werediran_rift_event.11.desc.default"
+			success_text = {
+				text = "MAR_werediran_rift_event.11.desc.signal"
+				has_astral_rift_flag = MAR_werediran_progress
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.11.desc.werediran"
+				has_astral_rift_flag = MAR_werediran_finished
+			}
+			success_text = {
+				text = "MAR_werediran_rift_event.11.desc.silent"
+				NOR = {
+					has_astral_rift_flag = MAR_werediran_progress
+					has_astral_rift_flag = MAR_werediran_finished
+				}
+			}
+		}
+	}
+	picture = GFX_evt_mysterious_signal
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We lose contact with our ship
+	option = {
+		name = MAR_werediran_rift_event.11.a
+		# Kill Leader
+		# Destroy Ship
+		fleet = {
+			kill_leader = {
+				show_notification = yes
+			}
+			destroy_fleet = this
+		}
+		#hidden_effect = {
+		#	explorer = {
+		#		country_event = { id = MAR_werediran_rift_event.102 days = 1 } # A scream of static, then silence
+		#	}
+		#}
+		finish_astral_rift = yes
+	}
+}
+
+# Help Accepted
+astral_rift_event = {
+	id = MAR_werediran_rift_event.15
+	title = MAR_werediran_rift_event.15.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_werediran_rift_event.15.desc.gestalt }
+				default = { text = MAR_werediran_rift_event.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Accept the blueprints
+	option = {
+		name = MAR_werediran_rift_event.15.a
+		# Gain Tower Building. Starts the Werediran chain if no one else  has started it and More Precursors is installed. Says the universe is silent if More Precursors is not installed and points to the empire with the Werediran chain if another empire has the chain. Use a custom on-action to do the universe is silent (event with trigger NOT have More Precursors) and start chain (event with trigger to have More Precursors)
+		explorer = {
+			add_research_option = tech_astral_werediran
+			astral_thread_large_reward = yes
+		}
+		set_global_flag = MAR_werediran_rift_closed
+		# When finished, do: FHMP_MAR_Precursor_Selection_Effect = yes
+		#FHMP_MAR_Precursor_Selection_Effect = yes
+		finish_astral_rift = yes
+	}
+	# Delete the blueprints
+	option = {
+		name = MAR_werediran_rift_event.15.b
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}

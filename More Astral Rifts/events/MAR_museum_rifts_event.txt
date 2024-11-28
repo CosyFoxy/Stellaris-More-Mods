@@ -1,0 +1,491 @@
+# Museum of All
+# By Metallichydra
+
+namespace = MAR_museum_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+astral_rift_event = {
+	id = MAR_museum_rift_event.1
+	title = MAR_museum_rift_event.1.name
+	desc = MAR_museum_rift_event.1.desc.default
+	picture = GFX_evt_galactic_community
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Approach the Shopkeeper
+	option = {
+		name = MAR_museum_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_museum_rift_event.2 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_museum_rift_event.2
+	title = MAR_museum_rift_event.2.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_museum_information = { # Asked for information
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_museum_rift_event.2.information.desc.gestalt }
+						default = { text = MAR_museum_rift_event.2.information.desc.default }
+					}
+				}
+				default = { # First Time
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_museum_rift_event.2.desc.gestalt }
+						default = { text = MAR_museum_rift_event.2.desc.default }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_obelisk_tourists
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Pay the ticket
+	option = {
+		name = MAR_museum_rift_event.2.a
+		allow = {
+			explorer = {
+				has_resource = { type = energy amount > 500 }
+			}
+		}
+		explorer = {
+			add_resource = {
+				energy = -500
+			}
+		}
+		set_next_astral_rift_event = { id = MAR_museum_rift_event.3 }
+	}
+	# Ask about the museum
+	option = {
+		name = MAR_museum_rift_event.2.b
+		trigger = {
+			NOT = { has_astral_rift_flag = MAR_museum_information }
+		}
+		set_astral_rift_flag = MAR_museum_information
+		set_next_astral_rift_event = { id = MAR_museum_rift_event.2 }
+	}
+	# Refuse to pay
+	option = {
+		name = MAR_museum_rift_event.2.c
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+astral_rift_event = {
+	id = MAR_museum_rift_event.3
+	title = MAR_museum_rift_event.3.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_museum_information = { text = MAR_museum_rift_event.3.information.desc }
+				default = { text = MAR_museum_rift_event.3.desc }
+			}
+		}
+	}
+	picture = GFX_evt_ancient_databank
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# 3 flags are randomly picked after the first event
+	
+	# Category: Heroes (Turn Scientist into Admiral)
+	option = {
+		name = MAR_museum_rift_event.3.a
+		#trigger = {
+		#	has_astral_rift_flag = MAR_museum_cat_heroes
+		#}
+		set_next_astral_rift_event = { id = MAR_museum_rift_event.4 }
+	}
+	# Category: Technologies / Historical Breakthroughs (Technology)
+	option = {
+		name = MAR_museum_rift_event.3.b
+		#trigger = {
+		#	has_astral_rift_flag = MAR_museum_cat_heroes
+		#}
+		set_next_astral_rift_event = { id = MAR_museum_rift_event.5 }
+	}
+	# Category: Legendary Battles (Modifier) # Category: Art (Unity)
+	option = {
+		name = MAR_museum_rift_event.3.c
+		#trigger = {
+		#	has_astral_rift_flag = MAR_museum_cat_heroes
+		#}
+		set_next_astral_rift_event = { id = MAR_museum_rift_event.6 }
+	}
+	# Category: Artifacts (Relic) (Much rarer than rest) (Idea: A replica of the galatron is shown. If taken, it gives the same benefits as the galatron, except only 1/100th of the original.
+	#option = {
+	#	name = MAR_museum_rift_event.3.d
+	#	trigger = {
+	#		has_astral_rift_flag = MAR_museum_cat_heroes
+	#	}
+	#	set_next_astral_rift_event = { id = MAR_museum_rift_event.7 }
+	#}
+	# Possibly More Categories
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# Scientist becomes a hero!
+astral_rift_event = {
+	id = MAR_museum_rift_event.4
+	title = MAR_museum_rift_event.4.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_museum_information = { # Knows about the museum
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_museum_rift_event.4.information.desc.gestalt }
+						default = { text = MAR_museum_rift_event.4.information.desc.default }
+					}
+				}
+				default = { # Knows nothing about the museum
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_museum_rift_event.4.desc.gestalt }
+						default = { text = MAR_museum_rift_event.4.desc.default }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_small_space_battle
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# He should fulfill his destiny!
+	option = {
+		name = MAR_museum_rift_event.4.a
+		trigger = {
+			has_astral_rift_flag = MAR_museum_information
+		}
+		# Make Scientist an admiral
+		fleet = {
+			leader = {
+				hidden_effect = { unassign_leader = this }
+				remove_all_traits = yes
+				change_leader_class = commander
+				set_skill = 1
+				add_experience = 54000
+				add_trait = leader_trait_MAR_heroic_destiny
+			}
+		}
+		custom_tooltip = MAR_museum_rift_event.4.a.tt #paragon.3160.e.custom_tooltip
+		# Add some unity
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier2unityreward
+				min = @tier2unitymin
+				max = @tier2unitymax
+			}
+		}
+		finish_astral_rift = yes
+	}
+	# Nonsense! We can't spare his genius!
+	option = {
+		name = MAR_museum_rift_event.4.b
+		trigger = {
+			has_astral_rift_flag = MAR_museum_information
+		}
+		# Add negative trait to scientist (Crushed dreams)
+		fleet = {
+			leader = {
+				add_trait = leader_trait_melancholic #leader_trait_MAR_crushed_dreams
+			}
+		}
+		explorer = {
+			astral_thread_large_reward = yes
+		}
+		finish_astral_rift = yes
+	}
+	# Who is that guy? I guess it's a good story?
+	option = {
+		name = MAR_museum_rift_event.4.c
+		trigger = {
+			NOT = { has_astral_rift_flag = MAR_museum_information }
+		}
+		# Add some unity
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier1unityreward
+				min = @tier1unitymin
+				max = @tier1unitymax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# A brand new technology we would have gotten later anyway!
+astral_rift_event = {
+	id = MAR_museum_rift_event.5
+	title = MAR_museum_rift_event.5.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_museum_information = { text = MAR_museum_rift_event.5.information.desc }
+				default = { text = MAR_museum_rift_event.5.desc }
+			}
+		}
+	}
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# A brilliant piece of technology!
+	option = {
+		name = MAR_museum_rift_event.5.a
+		# Add technology (Special Technology, random of 3)
+		explorer = {
+			add_random_research_option = {
+				area = physics
+				tier = 5
+				add_progress = 0.25
+				ignore_prereqs = yes #default no
+				ignore_rare = yes #default yes
+				only_rare = yes #default no
+				ignore_insight = yes #default yesyes
+				fail_effects = {
+					add_monthly_resource_mult = {
+						resource = physics_research
+						value = @tier5researchreward
+						min = @tier5researchmin
+						max = @tier5researchmax
+					}
+				}
+			}
+		}
+
+		# Add some unity if has the museum information flag
+		explorer = {
+			astral_thread_large_reward = yes
+			if = {
+				limit = { prev = { has_astral_rift_flag = MAR_museum_information } }
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier1unityreward
+					min = @tier1unitymin
+					max = @tier1unitymax
+				}
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# Legendary Battles
+astral_rift_event = {
+	id = MAR_museum_rift_event.6
+	title = MAR_museum_rift_event.6.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_museum_information = { # Knows about the museum
+					switch = {
+						trigger = has_astral_rift_flag
+						MAR_museum_cloaking_battle = { text = MAR_museum_rift_event.6.cloaking.desc }
+						MAR_museum_valor_battle = { text = MAR_museum_rift_event.6.valor.desc }
+						MAR_museum_bulwark_battle = { text = MAR_museum_rift_event.6.bulwark.desc }
+						MAR_museum_sacrifice_battle = { text = MAR_museum_rift_event.6.sacrifice.desc }
+						default = { text = MAR_museum_rift_event.6.information.desc.default }
+					}
+				}
+				default = { text = MAR_museum_rift_event.6.desc }
+			}
+		}
+	}
+	picture = GFX_evt_small_space_battle
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		# Random list with 3 - 4 different flags, apply as astral rift flag
+		# Save a random neighboring empire as an event target (Or if none of those exist, a random empire, and if none of those exist, remove the MAR_museum_information)
+		hidden_effect = {
+			random_list = {
+				33 = {
+					modifier = {
+						factor = 0
+						has_first_contact_dlc = no
+					}
+					set_astral_rift_flag = MAR_museum_cloaking_battle
+				}
+				33 = { set_astral_rift_flag = MAR_museum_valor_battle }
+				33 = { set_astral_rift_flag = MAR_museum_bulwark_battle }
+			}
+			explorer = {
+				random_neighbor_country = {
+					save_event_target_as = MAR_museum_rival
+				}
+				if = {
+					limit = {
+						NOT = { exists = event_target:MAR_museum_rival }
+					}
+					random_country = {
+						limit = {
+							NOT = {
+								is_same_value = prev
+							}
+						}
+						save_event_target_as = MAR_museum_rival
+					}
+				}
+			}
+		}
+	}
+	
+	# A battle is described, there's some interesting strategies used, but nothing noteworthy
+	option = {
+		name = MAR_museum_rift_event.6.a
+		trigger = {
+			NOT = { has_astral_rift_flag = MAR_museum_information }
+		}
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+	
+	# A battle is described between our empire and the (event target) where out forces outwit them with cloaking
+	option = {
+		name = MAR_museum_rift_event.6.b
+		trigger = {
+			has_astral_rift_flag = MAR_museum_information
+			has_astral_rift_flag = MAR_museum_cloaking_battle
+		}
+		# Add cloaking-related modifier
+		# Add small opinion penalty called "Future Enemies" towards the event target
+		explorer = {
+			add_modifier = {
+				modifier = MAR_museum_cloaking_modifier
+				days = -1
+			}
+			add_opinion_modifier = { modifier = opinion_MAR_future_enemy who = event_target:MAR_museum_rival }
+		}
+		finish_astral_rift = yes
+	}
+	
+	# A battle is described between our empire and the (event target) where out forces valiantly won by sheer force of will
+	option = {
+		name = MAR_museum_rift_event.6.c
+		trigger = {
+			has_astral_rift_flag = MAR_museum_information
+			has_astral_rift_flag = MAR_museum_bulwark_battle
+		}
+		# Add Hull modifier
+		# Add small opinion penalty called "Future Enemies" towards the event target
+		explorer = {
+			add_modifier = {
+				modifier = MAR_museum_hull_modifier
+				days = -1
+			}
+			add_opinion_modifier = { modifier = opinion_MAR_future_enemy who = event_target:MAR_museum_rival }
+		}
+		finish_astral_rift = yes
+	}
+	
+	# A battle is described between our empire and the (event target) where out forces bravely charged in, winning against overwhelming odds
+	option = {
+		name = MAR_museum_rift_event.6.d
+		trigger = {
+			has_astral_rift_flag = MAR_museum_information
+			has_astral_rift_flag = MAR_museum_valor_battle
+		}
+		# Add sublight speed modifier
+		# Add small opinion penalty called "Future Enemies" towards the event target
+		explorer = {
+			add_modifier = {
+				modifier = MAR_museum_charge_modifier
+				days = -1
+			}
+			add_opinion_modifier = { modifier = opinion_MAR_future_enemy who = event_target:MAR_museum_rival }
+		}
+		finish_astral_rift = yes
+	}
+	
+	# A battle is described between our empire and the (event target) where out forces sacrificed themselves to save our empire
+	option = {
+		name = MAR_museum_rift_event.6.e
+		trigger = {
+			has_astral_rift_flag = MAR_museum_information
+			has_astral_rift_flag = MAR_museum_sacrifice_battle
+		}
+		# Add modifier that gives bonus when friendly ships die
+		# Add small opinion penalty called "Future Enemies" towards the event target
+		explorer = {
+			add_modifier = {
+				modifier = MAR_museum_sacrifice_modifier
+				days = -1
+			}
+			add_opinion_modifier = { modifier = opinion_MAR_future_enemy who = event_target:MAR_museum_rival }
+		}
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			if = {
+				limit = { prev = { has_astral_rift_flag = MAR_museum_information } }
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+	}
+}

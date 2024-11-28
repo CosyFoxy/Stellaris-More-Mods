@@ -1,0 +1,266 @@
+# The Isolated Valley
+# By Metallichydra
+
+namespace = MAR_valley_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+# We see mountains around us. This Valley
+astral_rift_event = {
+	id = MAR_valley_rift_event.1
+	title = MAR_valley_rift_event.1.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.1.desc.gestalt }
+				default = { text = MAR_valley_rift_event.1.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_animal_wildlife
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue Flying
+	option = {
+		name = MAR_valley_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.25 }
+	}
+	
+	# Land near those huts
+	option = {
+		name = MAR_valley_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.5 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We land near the huts
+astral_rift_event = {
+	id = MAR_valley_rift_event.5
+	title = MAR_valley_rift_event.5.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.5.desc.gestalt }
+				default = { text = MAR_valley_rift_event.5.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_MAR_valley
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Open the cellar
+	option = {
+		name = MAR_valley_rift_event.5.a
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.10 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We open the cellar
+astral_rift_event = {
+	id = MAR_valley_rift_event.10
+	title = MAR_valley_rift_event.10.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.10.desc.gestalt }
+				default = { text = MAR_valley_rift_event.10.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_bone_building
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		explorer = {
+			add_resource = {
+				food = 200
+			}
+		}
+	}
+	
+	# Read the document
+	option = {
+		name = MAR_valley_rift_event.10.a
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.15 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We read the document
+astral_rift_event = {
+	id = MAR_valley_rift_event.15
+	title = MAR_valley_rift_event.15.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.15.desc.gestalt }
+				default = { text = MAR_valley_rift_event.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_colony_settlement
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Peculiar
+	option = {
+		name = MAR_valley_rift_event.15.a
+		# We gain some society research
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We find the barrier
+astral_rift_event = {
+	id = MAR_valley_rift_event.25
+	title = MAR_valley_rift_event.25.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.25.desc.gestalt }
+				default = { text = MAR_valley_rift_event.25.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_riftworld_archsite_ancientsphere
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Scan the barrier
+	option = {
+		name = MAR_valley_rift_event.25.a
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.30 }
+	}
+	
+	# Drill through the barrier
+	option = {
+		name = MAR_valley_rift_event.25.b
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.35 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We scan the barrier
+astral_rift_event = {
+	id = MAR_valley_rift_event.30
+	title = MAR_valley_rift_event.30.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.30.desc.gestalt }
+				default = { text = MAR_valley_rift_event.30.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_riftworld_archsite_ancientsphere
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Drill Through the barrier
+	option = {
+		name = MAR_valley_rift_event.30.a
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.35 }
+	}
+	
+	# Perhaps the answer lies in those huts?
+	option = {
+		name = MAR_valley_rift_event.30.b
+		set_next_astral_rift_event = { id = MAR_valley_rift_event.5 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We drill through barrier. The anchor saves us
+astral_rift_event = {
+	id = MAR_valley_rift_event.35
+	title = MAR_valley_rift_event.35.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_rift_event.35.desc.gestalt }
+				default = { text = MAR_valley_rift_event.35.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_egg_cracked
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Let's leave
+	option = {
+		name = MAR_valley_rift_event.35.a
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}

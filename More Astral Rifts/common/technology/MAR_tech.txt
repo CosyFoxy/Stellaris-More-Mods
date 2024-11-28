@@ -1,0 +1,23 @@
+
+#######################
+# Astral Technologies #
+#######################
+
+tech_astral_werediran = {
+	cost = @tier3cost1
+	area = society
+	category = { statecraft }
+	tier = 4
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+
+	potential = {
+		has_astral_planes_dlc = yes
+	}
+	
+	modifier = {
+		show_only_custom_tooltip = yes
+		custom_tooltip = tech_MAR_werediran_effect
+	}
+}

@@ -1,0 +1,52 @@
+MAR_clockstopper_timesand = {
+	leader_lifespan_add = 20
+}
+
+MAR_called_home = {
+	ship_archaeological_site_clues_add = 1
+	ship_archaeological_site_excavation_speed_mult = 0.1
+}
+
+MAR_signal_recorded = {
+	intel_encryption_add = 1
+}
+
+MAR_starless_scales = {
+	ship_cloaking_strength_add = 1
+}
+
+MAR_starless_scales_no_first_contact = {
+	custom_tooltip = MAR_starless_scales_no_first_contact_tt
+}
+
+MAR_museum_cloaking_modifier = {
+	ship_cloaking_strength_add = 1
+}
+
+MAR_museum_hull_modifier = {
+}
+
+MAR_museum_charge_modifier = {
+}
+
+MAR_museum_sacrifice_modifier = {
+}
+
+MAR_lightbeast_cloaking = {
+	ship_cloaking_strength_add = 5
+	intel_encryption_add = 5
+}
+
+MAR_lightbeast_encryption = {
+	intel_encryption_add = 5
+}
+
+MAR_nanite_help = {
+	starbase_shipyard_build_speed_mult = 1
+}
+
+MAR_lightbuds = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+	icon_frame = 1
+	planet_farmers_unity_produces_add = 1
+}

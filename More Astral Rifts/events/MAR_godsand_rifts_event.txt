@@ -1,0 +1,538 @@
+# Godsand
+# By Metallichydra
+
+namespace = MAR_godsand_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+astral_rift_event = {
+	id = MAR_godsand_rift_event.1
+	title = MAR_godsand_rift_event.1.name
+	desc = MAR_godsand_rift_event.1.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Enter the temple
+	option = {
+		name = MAR_godsand_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.5 }
+	}
+	
+	# Examine the sand
+	option = {
+		name = MAR_godsand_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.50 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We enter the temple and find strange symbols
+astral_rift_event = {
+	id = MAR_godsand_rift_event.5
+	title = MAR_godsand_rift_event.5.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_nanites = { text = MAR_godsand_rift_event.5.desc.nanites }
+				default = { text = MAR_godsand_rift_event.5.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_ancient_records
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Translate the symbols
+	option = {
+		name = MAR_godsand_rift_event.5.a
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.6 }
+	}
+	
+	# Proceed further into the temple
+	option = {
+		name = MAR_godsand_rift_event.5.b
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.10 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We translate the runes
+astral_rift_event = {
+	id = MAR_godsand_rift_event.6
+	title = MAR_godsand_rift_event.6.name
+	desc = MAR_godsand_rift_event.6.desc
+	picture = GFX_evt_ancient_records
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Proceed further into the temple
+	option = {
+		name = MAR_godsand_rift_event.6.a
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.10 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We proceed further into the temple and find strange symbols
+astral_rift_event = {
+	id = MAR_godsand_rift_event.10
+	title = MAR_godsand_rift_event.10.name
+	desc = MAR_godsand_rift_event.10.desc
+	picture = GFX_evt_alien_hieroglyphics
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Translate the symbols
+	option = {
+		name = MAR_godsand_rift_event.10.a
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.11 }
+	}
+	
+	# Proceed further into the temple
+	option = {
+		name = MAR_godsand_rift_event.10.b
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.15 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We translate the runes
+astral_rift_event = {
+	id = MAR_godsand_rift_event.11
+	title = MAR_godsand_rift_event.11.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_translated_first_symbols = { text = MAR_godsand_rift_event.11.desc.second }
+				default = { text = MAR_godsand_rift_event.11.desc.first }
+			}
+		}
+	}
+	picture = GFX_evt_alien_hieroglyphics
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Proceed further into the temple
+	option = {
+		name = MAR_godsand_rift_event.11.a
+		hidden_effect = {
+			set_astral_rift_flag = MAR_godsand_translated_second_symbols
+			if = {
+				limit = {
+					has_astral_rift_flag = MAR_godsand_translated_first_symbols
+				}
+				set_astral_rift_flag = MAR_godsand_translated_both_symbols
+			}
+		}
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.15 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We proceed further into the temple and find strange symbols and a box
+astral_rift_event = {
+	id = MAR_godsand_rift_event.15
+	title = MAR_godsand_rift_event.15.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_translated_final_symbols = {
+					switch = {
+						trigger = has_astral_rift_flag
+						MAR_godsand_translated_both_symbols = { text = MAR_godsand_rift_event.15.desc.translated.both }
+						MAR_godsand_translated_second_symbols = { text = MAR_godsand_rift_event.15.desc.translated.second }
+						MAR_godsand_translated_first_symbols = { text = MAR_godsand_rift_event.15.desc.translated.first }
+						default = { text = MAR_godsand_rift_event.15.desc.translated.default }
+					}
+				}
+				default = { text = MAR_godsand_rift_event.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_astral_rift_desert_ruins_first_chamber
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Translate the symbols
+	option = {
+		name = MAR_godsand_rift_event.15.a
+		trigger = {
+			NOT = {
+				has_astral_rift_flag = MAR_godsand_translated_final_symbols_flag
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					AND = {
+						has_astral_rift_flag = MAR_godsand_translated_second_symbols
+						has_astral_rift_flag = MAR_godsand_translated_first_symbols
+						has_astral_rift_flag = MAR_godsand_nanites
+					}
+				}
+				set_astral_rift_flag = MAR_godsand_both_nanites_symbols
+			}
+			set_astral_rift_flag = MAR_godsand_translated_final_symbols_flag
+			set_astral_rift_flag = MAR_godsand_translated_final_symbols
+			explorer = {
+				set_country_flag = MAR_godsand_translated_final_symbols
+			}
+		}
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.15 }
+	}
+	
+	# Pick open the box
+	option = {
+		name = MAR_godsand_rift_event.15.b
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.20 }
+	}
+	
+	# Smash open the box
+	option = {
+		name = MAR_godsand_rift_event.15.c
+		set_next_astral_rift_event = {
+			id = MAR_godsand_rift_event.25
+			on_roll_failed = MAR_godsand_rift_event.30
+			fail_probability = @default_failure_probability
+		}
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We pick open the box
+astral_rift_event = {
+	id = MAR_godsand_rift_event.20
+	title = MAR_godsand_rift_event.20.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_both_nanites_symbols = { text = MAR_godsand_rift_event.20.desc.fullnanites }
+				MAR_godsand_nanites = { text = MAR_godsand_rift_event.20.desc.nanites }
+				MAR_godsand_translated_final_symbols = { text = MAR_godsand_rift_event.20.desc.translated }
+				default = { text = MAR_godsand_rift_event.20.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_astral_rift_flag = MAR_godsand_translated_first_symbols
+					has_astral_rift_flag = MAR_godsand_translated_second_symbols
+				}
+			}
+			set_astral_rift_flag = MAR_godsand_any_translation
+		}
+	}
+	
+	# Take the relic
+	option = {
+		name = {
+			trigger = {
+				switch = {
+					trigger = has_astral_rift_flag
+					MAR_godsand_any_translation = { text = MAR_godsand_rift_event.20.b }
+					default = { text = MAR_godsand_rift_event.20.a } #
+				}
+			}
+		}
+		hidden_effect = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_translated_both_symbols = { explorer = { set_country_flag = MAR_godsand_full_remote_explanation } }
+				MAR_godsand_translated_first_symbols = { explorer = { set_country_flag = MAR_godsand_world_before_remote_explanation } }
+				MAR_godsand_translated_second_symbols_symbols = { explorer = { set_country_flag = MAR_godsand_warlord_remote_explanation } }
+				default = { explorer = { set_country_flag = MAR_godsand_no_remote_explanation } }
+			}
+		}
+		explorer = {
+			astral_thread_large_reward = yes
+			add_relic = r_MAR_godsand_remote
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We smash open the box (Success)
+astral_rift_event = {
+	id = MAR_godsand_rift_event.25
+	title = MAR_godsand_rift_event.20.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_both_nanites_symbols = { text = MAR_godsand_rift_event.25.desc.fullnanites }
+				MAR_godsand_nanites = { text = MAR_godsand_rift_event.25.desc.nanites }
+				MAR_godsand_translated_final_symbols = { text = MAR_godsand_rift_event.25.desc.translated }
+				default = { text = MAR_godsand_rift_event.25.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_astral_rift_flag = MAR_godsand_translated_first_symbols
+					has_astral_rift_flag = MAR_godsand_translated_second_symbols
+				}
+			}
+			set_astral_rift_flag = MAR_godsand_any_translation
+		}
+	}
+	
+	# Take the relic
+	option = {
+		name = {
+			trigger = {
+				switch = {
+					trigger = has_astral_rift_flag
+					MAR_godsand_any_translation = { text = MAR_godsand_rift_event.20.b }
+					default = { text = MAR_godsand_rift_event.20.a } #
+				}
+			}
+		}
+		hidden_effect = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_translated_both_symbols = { explorer = { set_country_flag = MAR_godsand_full_remote_explanation } }
+				MAR_godsand_translated_first_symbols = { explorer = { set_country_flag = MAR_godsand_world_before_remote_explanation } }
+				MAR_godsand_translated_second_symbols_symbols = { explorer = { set_country_flag = MAR_godsand_warlord_remote_explanation } }
+				default = { explorer = { set_country_flag = MAR_godsand_no_remote_explanation } }
+			}
+		}
+		explorer = {
+			astral_thread_large_reward = yes
+			add_relic = r_MAR_godsand_remote
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We smash open the box (Failure)
+astral_rift_event = {
+	id = MAR_godsand_rift_event.30
+	title = MAR_godsand_rift_event.30.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_godsand_nanites = { text = MAR_godsand_rift_event.30.desc.nanites }
+				MAR_godsand_translated_final_symbols = { text = MAR_godsand_rift_event.30.desc.translated }
+				default = { text = MAR_godsand_rift_event.30.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_gray_goo
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_astral_rift_flag = MAR_godsand_translated_first_symbols
+					has_astral_rift_flag = MAR_godsand_translated_second_symbols
+				}
+			}
+			set_astral_rift_flag = MAR_godsand_any_translation
+		}
+	}
+	
+	# Take the relic
+	option = {
+		name = MAR_godsand_rift_event.30.a
+		name = {
+			trigger = {
+				switch = {
+					trigger = has_astral_rift_flag
+					MAR_godsand_nanites = { text = MAR_godsand_rift_event.30.a.nanites } # We should have been more careful
+					MAR_godsand_translated_final_symbols = { text = MAR_godsand_rift_event.30.a.translated } # The curse has been triggered
+					default = { text = MAR_godsand_rift_event.30.a.default } # Horrible!
+				}
+			}
+		}
+		# Kill scientist
+		fleet = {
+			kill_leader = {
+				show_notification = yes
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We examine the sand
+astral_rift_event = {
+	id = MAR_godsand_rift_event.50
+	title = MAR_godsand_rift_event.50.name
+	desc = MAR_godsand_rift_event.50.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_astral_rift_flag = MAR_godsand_nanites
+		explorer = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+	
+	# Try to reactivate the nanites
+	option = {
+		name = MAR_godsand_rift_event.50.a
+		set_next_astral_rift_event = {
+			id = MAR_godsand_rift_event.55
+			on_roll_failed = MAR_godsand_rift_event.60
+			fail_probability = @default_failure_probability
+		}
+	}
+	
+	# Enter the temple
+	option = {
+		name = MAR_godsand_rift_event.50.b
+		set_next_astral_rift_event = { id = MAR_godsand_rift_event.5 }
+	}
+	
+	# Bring back some for study
+	option = {
+		name = MAR_godsand_rift_event.50.c
+		explorer = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+			add_resource = { nanites = 200 }
+		}
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We examine the sand (Success)
+astral_rift_event = {
+	id = MAR_godsand_rift_event.55
+	title = MAR_godsand_rift_event.55.name
+	desc = MAR_godsand_rift_event.55.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Unfortunate
+	option = {
+		name = MAR_godsand_rift_event.55.a
+		explorer = {
+			astral_thread_small_reward = yes
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We examine the sand (Failure)
+astral_rift_event = {
+	id = MAR_godsand_rift_event.60
+	title = MAR_godsand_rift_event.60.name
+	desc = MAR_godsand_rift_event.60.desc
+	picture = GFX_evt_gray_goo
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Unfortunate
+	option = {
+		name = MAR_godsand_rift_event.60.a
+		# Kill scientist
+		fleet = {
+			kill_leader = {
+				show_notification = yes
+			}
+		}
+		finish_astral_rift = yes
+	}
+}

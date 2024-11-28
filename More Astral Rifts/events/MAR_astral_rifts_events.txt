@@ -1,0 +1,195 @@
+# MAR_rift_event
+# By Metallichydra
+
+# Setup Event
+
+namespace = MAR_rift_event
+
+# Structure: Each event appends a number behind the current event's ID
+# So in event 121, the first choice is event 1211, the second is 1211 and the second is 1212, and the third is 1213 and so on. First choice of 1211 is then 12111 etc. The very first event does not do this as there is no choice
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+# Event to setup the localization flags on Astral Rifts
+# Directly using the exploring leader causes problem in the persistence of the texts
+# once the leader has finished the exploration or is dead
+# From = Astral Rift being explored
+# FromFrom = Exploring fleet
+country_event = {
+	id = MAR_rift_event.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_astral_planes_dlc = yes
+	}
+
+	immediate = {
+		from = {
+			# Cyborg leader
+			if = {
+				limit = {
+					NOT = { has_astral_rift_flag = MAR_description_cyborg }
+					leader.species = {
+						has_trait = leader_trait_cyborg
+					}
+				}
+				set_astral_rift_flag = MAR_description_cyborg
+			}
+			# Synthetic leader
+			if = {
+				limit = {
+					NOT = { has_astral_rift_flag = MAR_description_synthetic }
+					leader.species = {
+						has_trait = leader_trait_synthetic
+					}
+				}
+				set_astral_rift_flag = MAR_description_synthetic
+			}
+			# Werediran Chain Finished
+			if = {
+				limit = {
+					NOR = {
+						has_astral_rift_flag = MAR_werediran_progress
+						has_astral_rift_flag = MAR_werediran_finished
+					}
+					explorer = { has_country_flag = werediran_homeworld_system }
+				}
+				set_astral_rift_flag = MAR_werediran_finished
+			}
+			# Werediran Chain Started
+			if = {
+				limit = {
+					NOR = {
+						has_astral_rift_flag = MAR_werediran_progress
+						has_astral_rift_flag = MAR_werediran_finished
+					}
+					NOT = { explorer = { has_country_flag = werediran_homeworld_system } }
+					explorer = { has_country_flag = werediran_intro }
+				}
+				set_astral_rift_flag = MAR_werediran_progress
+			}
+			# Volgan Chain Started
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_astral_rift_flag = MAR_volgan
+						}
+						explorer = { has_country_flag = volgan_intro }
+					}
+				}
+				set_astral_rift_flag = MAR_volgan
+			}
+		}
+	}
+}
+
+# Lock astral rift from pool if it may reward a relic
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+country_event = {
+	id = MAR_rift_event.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_astral_planes_dlc = yes
+		from = {
+			OR = {
+				has_astral_rift_flag = MAR_can_reward_relic
+				has_astral_rift_flag = MAR_werediran_rift
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			switch = {
+				trigger = has_astral_rift_flag
+				r_MAR_clockstopper = {
+					set_global_flag = astral_rift_with_relic_r_MAR_clockstopper_being_explored
+				}
+				r_MAR_godsand_remote = {
+					set_global_flag = astral_rift_with_relic_r_MAR_godsand_remote_being_explored
+				}
+				r_MAR_lightbeast_head = {
+					set_global_flag = astral_rift_with_relic_r_MAR_lightbeast_head_being_explored
+				}
+				MAR_werediran_rift = {
+					set_global_flag = MAR_werediran_rift_being_explored
+				}
+			}
+		}
+	}
+}
+
+# Unlock astral rift from pool if the relic has not been acquired
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+country_event = {
+	id = MAR_rift_event.3
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_astral_planes_dlc = yes
+		from = {
+			OR = {
+				has_astral_rift_flag = MAR_can_reward_relic
+				has_astral_rift_flag = MAR_werediran_rift
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			switch = {
+				trigger = has_astral_rift_flag
+				r_MAR_clockstopper = {
+					inline_script = {
+						script = astral_rift/unlock_from_pool_if_relic_not_owned
+						RELIC = r_MAR_clockstopper
+					}
+				}
+				r_MAR_godsand_remote = {
+					inline_script = {
+						script = astral_rift/unlock_from_pool_if_relic_not_owned
+						RELIC = r_MAR_godsand_remote
+					}
+				}
+				r_MAR_lightbeast_head = {
+					inline_script = {
+						script = astral_rift/unlock_from_pool_if_relic_not_owned
+						RELIC = r_MAR_lightbeast_head
+					}
+				}
+				MAR_werediran_rift = {
+					remove_global_flag = MAR_werediran_rift_being_explored
+				}
+			}
+		}
+	}
+}
+
+# On research Planetary Unification
+country_event = {
+	id = MAR_rift_event.4 #action.400
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_astral_werediran
+	}
+
+	immediate = {
+		FHMP_MAR_Precursor_Selection_Effect = yes
+	}
+}
