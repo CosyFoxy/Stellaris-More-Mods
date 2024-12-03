@@ -1,0 +1,36 @@
+The Valley:
+
+Currently: Choose between Huts or finding the Dome.
+Dome: Outside the Dome was nothing. Air gets sucked out if drilling through the dome, leaving the space in vaccum.
+Huts: Find Emergency Shelter with much Food plus document stating expansion past emergency zone is not intended
+Ideas:
+If new empire:
+- If drilling through the dome:
+    Find a barren land with nothing but cold stone. Primitive buildings can be seen in the distance, yet first
+    indications show that this area does not support life.
+    Interestingly, most of our scans returned as if hitting some sort of wall, although they appear warped and corrupted.
+    Except one direction, in which our scan did not return. What does this mean.
+        - Search the buildings for life forms
+            The buildings seem to indicate that previously this area has been inhabited. We find the cellar with the intact food supplies
+                Peculiar
+        - Find out why one scan did not return
+            We find what appears to be a crystalline dome. At the point at which our scan received no data, we found a hole
+            seemingly created by some sort of drilling device.
+            It has barely reached the outside, but no further attempt at penetrating the dome is detected
+                Go back to buildings
+                Exit the dome
+                    Outside the dome is a vast space. Or rather a vast nothingness. It appears as if the dome was not a dome,
+                    but a sphere. A sphere drifting in an ocean of emptiness. We have more questions than answers
+                        Analyze the dome
+                            >End
+                        Wander further
+                            We cannot say how long we have been venturing into the vast nothingness. Occassionally we were able to spot tiny sparks in the distance
+                            only for them to dissapear when we wanted to get closer. After another seeming eternity of drifting,
+                            we find another sphere. Many holes have penetrated the sphere, and the inside seem as lifeless as our first one.
+                            From outside, we can see ruins of more primitive buildings, however seemingly more than we saw in our first sphere.
+                            Whatever this is, so far all we have found was death and collapse
+                                Leave the rift.
+
+- If taking the food:
+    Start out as original rift. When going towards the huts, find nothing of interest. Whatever lived here has long died. Give negative trait
+    If going to dome, repeat original rift
