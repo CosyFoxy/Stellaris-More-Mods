@@ -34,3 +34,14 @@ If new empire:
 - If taking the food:
     Start out as original rift. When going towards the huts, find nothing of interest. Whatever lived here has long died. Give negative trait
     If going to dome, repeat original rift
+
+
+New ideas:
+    The Labyrinth
+        - Scientist finds themselves in what appears to be a hallway, torches lighting up the pathway
+            - Go to the left or right
+            - Correct route: Left Left Right Left
+            - Options to go left/right/leave on each step
+            - A loud thumping noise comes closer for every step
+            - If final room is not reached in 5 steps, the scientist is killed by whatever made the noise
+            - Final room has a reward, potentially something like an
