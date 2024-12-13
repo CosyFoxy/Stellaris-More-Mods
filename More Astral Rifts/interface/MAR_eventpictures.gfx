@@ -33,4 +33,11 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+	
+	spriteType = {
+		name = "GFX_evt_MAR_starless_sky"
+		texturefile = "gfx/event_pictures/MAR_starless_sky.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
 }
