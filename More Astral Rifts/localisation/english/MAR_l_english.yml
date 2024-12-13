@@ -616,6 +616,10 @@
  MAR_valley_rift_event.10.desc.default: "Inside the cellar is food. Lots of food.\n\nAll of it is packed in vacuum and has been dehydrated to 0% humidity. Theoretically it should last forever.\n\nThe cellar itself is not that spectacular, and beyond food there's only a document labeled "§HWelcome to the emergency safe zone 21§!"."
  MAR_valley_rift_event.10.a: "Read the Document."
  
+ MAR_valley_rift_event.10.desc.gestalt.noposter: "$MAR_valley_rift_event.10.desc.default.noposter$"
+ MAR_valley_rift_event.10.desc.default.noposter: "Inside the cellar is food. Lots of food.\n\nAll of it is packed in vacuum and has been dehydrated to 0% humidity. Theoretically it should last forever.\n\nThe cellar itself is not that spectacular, and beyond food there's only dust."
+ MAR_valley_rift_event.10.b: "Strange."
+ 
  MAR_valley_rift_event.15.name: "Emergency Bunker"
  MAR_valley_rift_event.15.desc.gestalt: "$MAR_valley_rift_event.15.desc.default$"
  MAR_valley_rift_event.15.desc.default: "The document states: §H"Welcome to the emergency safe zone 21\n\n This emergency safe zone should be able to safely house a population of 10.000 individuals of most* species, and has enough sustenance for 50 years, during which the fertile land in your emergency safe zone*tm* can be converted into agricultural farmland. The emergency safe zone is not designed for use extending more than 5000 years, and has a maximum capacity of 20000 individuals of standard sized species. Do not try to expand your emergency safe zone without authorized personnel. Refunds are only valid if the emergency safe zone fails due to outside factors."§!"
@@ -637,6 +641,70 @@
  MAR_valley_rift_event.35.desc.gestalt: ""
  MAR_valley_rift_event.35.desc.default: "The barrier was tougher than we expected, but in the end we managed to drill through it.\n\nAs soon as we were through, we were met not with another idyllic valley or further extension of the planet, but instead nothingness.\n\nInstantly the air began flowing outwards to fill the vacuum, threatening to pull the sphere with it. [Leader.GetName] says [Leader.GetHeShe] and [Leader.GetHisHer] team would have been dead had it not been for the emergency anchor attached to the sphere, preventing it from going fully through."
  MAR_valley_rift_event.35.a: "We were lucky this time."
+ 
+ astral_rift_MAR_valley_2_drilled: "Desolate Valley"
+ 
+ # The Valley 2 - Drilled - Re, by MaxiundMicky
+ MAR_valley_2_drilled_re_rift_event.1.name: "Desolate Valley"
+ MAR_valley_2_drilled_re_rift_event.1.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.1.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.1.desc.default: "Our sphere arrived in a desolate scene. Dust and ice covered the lands, and what appeared to have been plants were frozen statues. It was a scene of death.\n\n We sent out scans in every direction, but they all returned scrambled. It seems this valley was surrounded by something, perhaps a mountain range. Yet from one direction, our scans did not return.\n\n In the distance are what seems like primitive huts."
+ MAR_valley_2_drilled_re_rift_event.1.desc.gestalt.explored: "$MAR_valley_2_drilled_re_rift_event.1.desc.default.explored$"
+ MAR_valley_2_drilled_re_rift_event.1.desc.default.explored: "Our sphere arrived in a desolate scene. Dust and ice covered the lands, and what appeared to have been plants were frozen statues. It was a scene of death.\n\n We sent out scans in every direction, but they all returned scrambled. It seems this valley was surrounded by something, perhaps a mountain range. Yet from one direction, our scans did not return.\n\n In the distance are what seems like primitive huts."
+ MAR_valley_2_drilled_re_rift_event.1.a: "Explore the huts."
+ MAR_valley_2_drilled_re_rift_event.1.b: "Investigate the missing scan."
+
+ MAR_valley_2_drilled_re_rift_event.5.name: "Memoirs of Life"
+ MAR_valley_2_drilled_re_rift_event.5.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.2.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.5.desc.default: "The huts were primitive, yet the materials used in their constructions were very sophisticated. This points towards the builders being an advanced civilization like ours.\n\nInside the huts were advanced devices, further supporting this theory. However, there was no sign of life anywhere.\n\nAt last, a cellar was found in the center-most building."
+ MAR_valley_2_drilled_re_rift_event.5.a: "Open the cellar."
+
+ MAR_valley_2_drilled_re_rift_event.10.name: "Shelter"
+ MAR_valley_2_drilled_re_rift_event.10.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.3.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.10.desc.default: "Inside the cellar is food. Lots of food.\n\nAll of it is packed in vacuum and has been dehydrated to 0% humidity. Theoretically it should last forever, even in the desolate wasteland that is this land.\n\nThe cellar itself is not that spectacular, and beyond food there's only a document labeled "§HWelcome to the emergency safe zone 21§!"."
+ MAR_valley_2_drilled_re_rift_event.10.a: "Read the Document."
+ 
+ MAR_valley_2_drilled_re_rift_event.10.desc.gestalt.noposter: "$MAR_valley_2_drilled_re_rift_event.3.desc.default.noposter$"
+ MAR_valley_2_drilled_re_rift_event.10.desc.default.noposter: "Inside the cellar is food. Lots of food.\n\nAll of it is packed in vacuum and has been dehydrated to 0% humidity. Theoretically it should last forever, even in the desolate wasteland that is this land.\n\nThe cellar itself is not that spectacular, and beyond food there's only dust and decay."
+ MAR_valley_2_drilled_re_rift_event.10.b: "Strange."
+
+ MAR_valley_2_drilled_re_rift_event.15.name: "Emergency Bunker"
+ MAR_valley_2_drilled_re_rift_event.15.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.4.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.15.desc.default: "The document states: §H"Welcome to the emergency safe zone 21\n\n This emergency safe zone should be able to safely house a population of 10.000 individuals of most* species, and has enough sustenance for 50 years, during which the fertile land in your emergency safe zone*tm* can be converted into agricultural farmland. The emergency safe zone is not designed for use extending more than 5000 years, and has a maximum capacity of 20000 individuals of standard sized species. Do not try to expand your emergency safe zone without authorized personnel. Refunds are only valid if the emergency safe zone fails due to outside factors."§!"
+ MAR_valley_2_drilled_re_rift_event.15.a: "Whatever attempted to survive did not succeed."
+
+ MAR_valley_2_drilled_re_rift_event.25.name: "Barrier"
+ MAR_valley_2_drilled_re_rift_event.25.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.5.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.25.desc.default: "While flying, all of a sudden a large object shows up on our radar. At first we are unsure what it is, but it is impossibly large and seems to be a mountain barrier, except it goes up with no end, and curves almost like a dome.\n\nUpon reaching it we are able to affirm that it is indeed a dome-like structure.\n\nWe are unsure what it is composed of, but it appears to be of crystalline structure of which light can pass through.\n\n At the coordinates where our scans went missing was a hole in the dome. It seems artificially created. Our first glances cannot make out anything outside the dome."
+ MAR_valley_2_drilled_re_rift_event.25.desc.gestalt.seenbarrier: "$MAR_valley_2_drilled_re_rift_event.5.desc.default.seenbarrier$"
+ MAR_valley_2_drilled_re_rift_event.25.desc.default.seenbarrier: "While flying, all of a sudden a large object shows up on our radar. At first we are unsure what it is, but it is impossibly large and seems to be a mountain barrier, except it goes up with no end, and curves almost like a dome.\n\nUpon reaching it we are able to affirm that it is indeed a dome-like structure.\n\nWe are unsure what it is composed of, but it appears to be of crystalline structure of which light can pass through, not unlike the barrier we found in another dimension.\nIn fact, we are cairly certain this is the same dimension, just further along the timeline.\n\n At the coordinates where our scans went missing was a hole in the dome. It seems artificially created. Our first glances cannot make out anything outside the dome."
+ MAR_valley_2_drilled_re_rift_event.25.a: "We remember now! We made this hole!"
+ MAR_valley_2_drilled_re_rift_event.25.b: "Was that ... us?"
+ MAR_valley_2_drilled_re_rift_event.25.c: "Venture outside."
+
+ MAR_valley_2_drilled_re_rift_event.30.name: "An End of Our Making"
+ MAR_valley_2_drilled_re_rift_event.30.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.6.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.30.desc.default: "This was the result of our actions. By drilling into the dome, we had drained it of all life. But now we can explore what lies beyond the dome, in what seems to be empty space."
+ MAR_valley_2_drilled_re_rift_event.30.a: "Venture outside."
+ 
+ MAR_valley_2_drilled_re_rift_event.35.name: "Emptiness"
+ MAR_valley_2_drilled_re_rift_event.35.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.7.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.35.desc.default: "Outside the dome is a vast space. Or rather a vast nothingness. It appears as if the dome was not a dome, but a sphere. A sphere drifting in an ocean of emptiness.\n\n We have more questions than answers."
+ MAR_valley_2_drilled_re_rift_event.35.a: "Analyze the sphere."
+ MAR_valley_2_drilled_re_rift_event.35.b: "Wander further."
+
+ MAR_valley_2_drilled_re_rift_event.40.name: "Crystalline Ball"
+ MAR_valley_2_drilled_re_rift_event.40.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.8.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.40.desc.default: "Further analysis of the sphere complement our findings from the inside. The makeup of the crystalline material is fascinating, allowing light to pass through, yet being secure enough to keep a solid shape even without a pressure difference. \n\n These findings will be useful for space-born construction."
+ MAR_valley_2_drilled_re_rift_event.40.a: "How useful!"
+
+ MAR_valley_2_drilled_re_rift_event.45.name: "Sea of Emptiness, Ocean of Despair"
+ MAR_valley_2_drilled_re_rift_event.45.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.9.desc.default$"
+ MAR_valley_2_drilled_re_rift_event.45.desc.default: "We cannot say how long we have been venturing into the vast nothingness. Occasionally we were able to spot tiny sparks in the distance only for them to disappear when we wanted to get closer.\n\nAfter what felt like an eternity of drifting, we find another sphere. Its outside was riddled with holes, and the inside seemed as lifeless as the one we began this journey in.\nFrom outside, we can see ruins of more primitive buildings, however seemingly more than we saw in our first sphere.\n\nWhatever this world was before, all that is left is death, despair, and emptiness."
+ MAR_valley_2_drilled_re_rift_event.45.a: "Terrifying."
+ 
+ # Modifiers
+ MAR_valley_hull: "Crystalline Reinforcement"
+ MAR_valley_hull_desc: "A secret from a dead world, allowing us to safely inhabit the void."
  
  # Stairs of Infinity
  astral_rift_MAR_stairs: "Stairs Of Infinity"

@@ -4,3 +4,7 @@
  MAR_lightbeast_scale: "Light-Absorbant Scale"
  MAR_lightbeast_scale_desc_short: "A scale of a creature from another dimension"
  MAR_lightbeast_scale_desc_details: "This scale does not reflect any light of any wavelength, even outside the visible spectrum. Curiously, both sides share this property."
+ 
+ MAR_valley_poster: "Emergency Safe Zone 21 Greeting Card"
+ MAR_valley_poster_desc_short: "A document detailing the capabilites of the bunker found in the idyllic valley dimension."
+ MAR_valley_poster_desc_details: "'Under no circumstances is the SafeHub Enterprise, or any division under the SafeGalaxy Corporation or its divisions liable to damages sustained outside of the juricidary of the Ezentian Combine.'"
