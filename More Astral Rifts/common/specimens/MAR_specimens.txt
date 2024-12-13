@@ -16,3 +16,18 @@ MAR_lightbeast_scale = {
 		ship_cloaking_strength_add = 1
 	}
 }
+
+MAR_valley_poster = {
+	icon = "GFX_specimen_MAR_valley_poster"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		ship_cloaking_strength_add = 1
+	}
+}

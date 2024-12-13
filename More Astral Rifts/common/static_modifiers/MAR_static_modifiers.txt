@@ -50,3 +50,8 @@ MAR_lightbuds = {
 	icon_frame = 1
 	planet_farmers_unity_produces_add = 1
 }
+
+MAR_valley_hull = {
+	habitat_max_districts_add = 1
+	shipclass_starbase_hull_mult = 0.2
+}

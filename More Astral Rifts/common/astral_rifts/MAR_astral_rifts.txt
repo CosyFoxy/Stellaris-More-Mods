@@ -132,9 +132,36 @@ MAR_valley = {
 	name = astral_rift_MAR_valley
 	event_weight = {
 		weight = 1
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = MAR_valley_rift_closed
+				has_global_flag = MAR_valley_rift_being_explored
+			}
+		}
+	}
+	flags = { MAR_rift MAR_valley_rift }
+	event = MAR_valley_rift_event.1
+	
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+# The Valley 2 redrilled, by MaxiundMicky
+MAR_valley = {
+	name = astral_rift_MAR_valley_2_drilled
+	event_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				has_global_flag = MAR_valley_rift_closed
+			}
+		}
 	}
 	flags = { MAR_rift }
-	event = MAR_valley_rift_event.1
+	event = MAR_valley_2_drilled_re_rift_event.1
 	
 	on_roll_failed = {
 		standard_astral_rift_on_roll_failed = yes
