@@ -91,6 +91,27 @@ astral_rift_event = {
 			}
 		}
 	}
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_global_flag
+				MAR_valley_poster_found = { # Asked for information
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_rift_event.10.desc.gestalt.noposter }
+						default = { text = MAR_valley_rift_event.10.desc.default.noposter }
+					}
+				}
+				default = { # First Time
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_rift_event.10.desc.gestalt }
+						default = { text = MAR_valley_rift_event.10.desc.default }
+					}
+				}
+			}
+		}
+	}
 	picture = GFX_evt_bone_building
 	show_sound = ap_rift_event_0_astral_wonder # Placeholder
 	difficulty = @astral_rift_medium_difficulty
@@ -108,7 +129,22 @@ astral_rift_event = {
 	# Read the document
 	option = {
 		name = MAR_valley_rift_event.10.a
+		trigger = {
+			NOT = { has_global_flag = MAR_valley_poster_found }
+		}
 		set_next_astral_rift_event = { id = MAR_valley_rift_event.15 }
+	}
+	
+	# No document
+	option = {
+		name = MAR_valley_rift_event.10.b
+		trigger = {
+			has_global_flag = MAR_valley_poster_found
+		}
+		explorer = {
+			set_country_flag = MAR_explored_valley
+		}
+		finish_astral_rift = yes
 	}
 	
 	after = {
@@ -136,6 +172,7 @@ astral_rift_event = {
 	difficulty = @astral_rift_easy_difficulty
 	astral_rift = yes
 	is_triggered_only = yes
+	specimen = MAR_valley_poster
 	
 	# Peculiar
 	option = {
@@ -149,6 +186,10 @@ astral_rift_event = {
 				min = @tier3researchmin
 				max = @tier3researchmax
 			}
+		}
+		set_global_flag = MAR_valley_poster_found
+		explorer = {
+			set_country_flag = MAR_explored_valley
 		}
 		finish_astral_rift = yes
 	}
@@ -226,6 +267,7 @@ astral_rift_event = {
 	after = {
 		explorer = {
 			astral_thread_small_reward = yes
+			set_country_flag = MAR_found_valley_barrier
 		}
 	}
 }
@@ -260,6 +302,11 @@ astral_rift_event = {
 				min = @tier3researchmin
 				max = @tier3researchmax
 			}
+		}
+		set_global_flag = MAR_valley_rift_closed
+		explorer = {
+			set_country_flag = MAR_explored_valley
+			set_country_flag = MAR_destroyed_barrier
 		}
 		finish_astral_rift = yes
 	}

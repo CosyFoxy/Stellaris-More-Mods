@@ -1,0 +1,393 @@
+# The Isolated Valley
+# By Metallichydra
+
+namespace = MAR_valley_2_drilled_re_rift_event
+
+# To-Do:
+# - Pictures
+# - Sound
+# - Localization
+
+# We see mountains around us. This Valley
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.1
+	title = MAR_valley_2_drilled_re_rift_event.1.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_explored_valley = { # Did you explore the valley before it got destroyed?
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.1.desc.gestalt.explored }
+						default = { text = MAR_valley_2_drilled_re_rift_event.1.desc.default.explored }
+					}
+				}
+				default = { # First Time
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.1.desc.gestalt }
+						default = { text = MAR_valley_2_drilled_re_rift_event.1.desc.default }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_tomb_world
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_initial_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Continue Flying
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.1.a
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.25 }
+	}
+	
+	# Land near those huts
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.1.b
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.5 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We land near the huts
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.5
+	title = MAR_valley_2_drilled_re_rift_event.5.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.5.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.5.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_tomb_world
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Open the cellar
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.5.a
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.10 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We open the cellar
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.10
+	title = MAR_valley_2_drilled_re_rift_event.10.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_global_flag
+				MAR_valley_poster_found = { # Has someone already taken the poster?
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.10.desc.gestalt.noposter }
+						default = { text = MAR_valley_2_drilled_re_rift_event.10.desc.default.noposter }
+					}
+				}
+				default = { # First Time
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.10.desc.gestalt }
+						default = { text = MAR_valley_2_drilled_re_rift_event.10.desc.default }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_bone_building
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		explorer = {
+			add_resource = {
+				food = 200
+			}
+		}
+	}
+	
+	# Read the document
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.10.a
+		trigger = {
+			NOT = { has_global_flag = MAR_valley_poster_found }
+		}
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.15 }
+	}
+	
+	# No document
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.10.b
+		trigger = {
+			has_global_flag = MAR_valley_poster_found
+		}
+		finish_astral_rift = yes
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We read the document
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.15
+	title = MAR_valley_2_drilled_re_rift_event.15.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.15.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_colony_settlement
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	specimen = MAR_valley_poster
+	
+	# Peculiar
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.15.a
+		# We gain some society research
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		set_global_flag = MAR_valley_poster_found
+		finish_astral_rift = yes
+	}
+}
+
+# We find the barrier
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.25
+	title = MAR_valley_2_drilled_re_rift_event.25.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.25.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.25.desc.default }
+			}
+		}
+	}
+	
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				MAR_found_valley_barrier = { # have we seen the barrier before this?
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.25.desc.gestalt.seenbarrier }
+						default = { text = MAR_valley_2_drilled_re_rift_event.25.desc.default.seenbarrier }
+					}
+				}
+				default = { # Never seen it OR destroyed it
+					switch = {
+						trigger = has_astral_rift_flag
+						description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.25.desc.gestalt }
+						default = { text = MAR_valley_2_drilled_re_rift_event.25.desc.default }
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_evt_riftworld_archsite_ancientsphere
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_easy_plus_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# We made that hole!
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.25.a
+		trigger = {
+			explorer = {
+				has_country_flag = MAR_destroyed_barrier
+			}
+		}
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.30 }
+	}
+	
+	# Venture Outside
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.25.c
+		trigger = {
+			NOT = { has_astral_rift_flag = MAR_found_valley_barrier }
+		}
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.35 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# This was us! We remember now! / An end of our making
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.30
+	title = MAR_valley_2_drilled_re_rift_event.30.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.30.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.30.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_medium_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Venture Outside
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.30.a
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.35 }
+	}
+	
+	after = {
+		explorer = {
+			astral_thread_small_reward = yes
+		}
+	}
+}
+
+# We venture outside.
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.35
+	title = MAR_valley_2_drilled_re_rift_event.35.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.35.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.35.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_egg_cracked
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Analyze the sphere
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.35.a
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.40 }
+	}
+	
+	#Venture further outside
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.35.b
+		set_next_astral_rift_event = { id = MAR_valley_2_drilled_re_rift_event.45 }
+	}
+}
+
+# Crystalline Ball
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.40
+	title = MAR_valley_2_drilled_re_rift_event.40.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.40.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.40.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_egg_cracked
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Let's leave
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.40.a
+		explorer = {
+			astral_thread_large_reward = yes
+			add_modifier = {
+				modifier = MAR_valley_hull
+				days = -1
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
+
+# We venture further outside. Find emptiness.
+astral_rift_event = {
+	id = MAR_valley_2_drilled_re_rift_event.45
+	title = MAR_valley_2_drilled_re_rift_event.45.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				description_gestalt = { text = MAR_valley_2_drilled_re_rift_event.45.desc.gestalt }
+				default = { text = MAR_valley_2_drilled_re_rift_event.45.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_MAR_starless_sky
+	show_sound = ap_rift_event_0_astral_wonder # Placeholder
+	difficulty = @astral_rift_hard_difficulty
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	# Let's leave
+	option = {
+		name = MAR_valley_2_drilled_re_rift_event.45.a
+		explorer = {
+			astral_thread_large_reward = yes
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3unityreward
+				min = @tier3unitymin
+				max = @tier3unitymax
+			}
+		}
+		finish_astral_rift = yes
+	}
+}
