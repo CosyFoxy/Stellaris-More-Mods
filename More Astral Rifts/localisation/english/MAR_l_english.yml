@@ -683,6 +683,8 @@
 
  # The Valley 2 - Drilled - New
 
+ astral_rift_MAR_valley_2_drilled: "Desolate Valley"
+
  MAR_valley_2_drilled_rift_event.1.name: "Desolate Valley"
  MAR_valley_2_drilled_rift_event.1.desc.gestalt: "$MAR_valley_2_drilled_rift_event.1.desc.default$"
  MAR_valley_2_drilled_rift_event.1.desc.default: "Our sphere arrived in a desolate scene. Dust and ice covered the lands, and what appeared to have been plants were frozen statues. It was a scene of death.\n\n We sent out scans in every direction, but they all returned scrambled. It seems this valley was surrounded by something, perhaps a mountain range. Yet from one direction, our scans did not return.\n\n In the distance were what seemed like primitive huts."
@@ -765,6 +767,8 @@
 
 
  # The Valley 2 - Drilled - Re
+
+ astral_rift_MAR_valley_2_drilled_re: "Desolate Valley"
 
  MAR_valley_2_drilled_re_rift_event.1.name: "Desolate Valley"
  MAR_valley_2_drilled_re_rift_event.1.desc.gestalt: "$MAR_valley_2_drilled_re_rift_event.1.desc.default$"
@@ -901,7 +905,98 @@
  MAR_stairs_rift_event.35.name: "Returned From Infinity"
  MAR_stairs_rift_event.35.desc: "Having been gone for 20 years, [Leader.GetName] has suddenly returned from [Leader.GetHisHer] expedition.\n\nStrangely [Leader.GetHeShe] hasn't aged since [Leader.GetHisHer] departure. This, however, should be of no consequence to their continuation of service the [Owner.GetName]."
  MAR_stairs_rift_event.35.a: "Welcome Back!"
- 
+
+ # The Labyrinth
+
+ astral_rift_MAR_labyrinth: "The Labyrinth"
+
+ MAR_labyrinth_rift_event.1.name: "The Labyrinth"
+ MAR_labyrinth_rift_event.1.desc: "Our sphere appears in what looks like the beginning of a long, dim hallway. The walls are made of solid brick, and primitive torches flicker light onto the rough stone.\nAs we follow the hallway further in, we approach a divergence.\nBoth the left and right path look identical."
+ MAR_labyrinth_rift_event.1.a: "Go left." #event.21
+ MAR_labyrinth_rift_event.1.b: "Go right." #event.22
+
+ #left-1 - correct
+ MAR_labyrinth_rift_event.21.name: "Monotone Hallway"
+ MAR_labyrinth_rift_event.21.desc: "After following the chosen corridor for a while, we come across another divergence.\n As [Leader.GetName] ponders about which path to take, a quiet thudding noise is barely audible.\n Once again, both ways appear identical.\nWhere to now?"
+ MAR_labyrinth_rift_event.21.a: "$MAR_labyrinth_rift_event.1.a$" #event.31
+ MAR_labyrinth_rift_event.21.b: "$MAR_labyrinth_rift_event.1.b$" #event.32
+ MAR_labyrinth_rift_event.21.c: "Turn back." #event.33
+
+ #right-1 - wrong
+ MAR_labyrinth_rift_event.22.name: "$MAR_labyrinth_rift_event.21.name$"
+ MAR_labyrinth_rift_event.22.desc: "$MAR_labyrinth_rift_event.21.desc$"
+ MAR_labyrinth_rift_event.22.a: "$MAR_labyrinth_rift_event.1.a$" #event.31
+ MAR_labyrinth_rift_event.22.b: "$MAR_labyrinth_rift_event.1.b$" #event.32
+ MAR_labyrinth_rift_event.22.c: "$MAR_labyrinth_rift_event.21.c$" #Only possible save - Go to event.33
+
+ #left-2 - correct
+ MAR_labyrinth_rift_event.31.name: "Weary Hallway"
+ MAR_labyrinth_rift_event.31.desc: "The brick walls stretched on for as long as we could see, the torches illuminating the stone in warm, yet somehow lifeless colors. As we followed the hallway, we ever so often picked up a faint noise coming from behind us in the hallway we were traversing. It was silent, seemingly from far away, and in intervals of multiple seconds. \nWhile we pondered about the noise, [Leader.GetName] approached another divergence of the path. Their sphere halted, awaiting our decision on which direction to go:\n\nTo the left, a seemingly endless brick hallway?\nTo the right, an identical hallway?\nOr should we turn back, towards the noise?"
+ MAR_labyrinth_rift_event.31.a: "$MAR_labyrinth_rift_event.1.a$" #event.41
+ MAR_labyrinth_rift_event.31.b: "$MAR_labyrinth_rift_event.1.b$" #event.42
+ MAR_labyrinth_rift_event.31.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+ #right-2 - wrong
+ MAR_labyrinth_rift_event.32.name: "$MAR_labyrinth_rift_event.31.name$"
+ MAR_labyrinth_rift_event.32.desc: "$MAR_labyrinth_rift_event.31.desc$"
+ MAR_labyrinth_rift_event.32.a: "$MAR_labyrinth_rift_event.1.a$" #event.41
+ MAR_labyrinth_rift_event.32.b: "$MAR_labyrinth_rift_event.1.b$" #event.42
+ MAR_labyrinth_rift_event.32.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+ #turned back to 1 - save
+ MAR_labyrinth_rift_event.33.name: "$MAR_labyrinth_rift_event.31.name$"
+ MAR_labyrinth_rift_event.33.desc: "[Leader.GetName] turned back the way we came from. As we traversed the monotone hallway again, we pondered what this place was. It was unlike anything we had seen before, almost like a labyrinth. [Leader.GetName] agreed to our observation, suggesting that we may need to find the correct order of hallways.\nSuddenly our sensors picked up a very faint noise. It was coming from in front of us, seemingly far far in the distance. The interval between the noises was multiple seconds long.\n\nWe arrived at the previous divergence again, ready to choose a new path. We looked at the different hallways. Where should we venture?"
+ MAR_labyrinth_rift_event.33.a: "$MAR_labyrinth_rift_event.1.a$" #event.31
+ MAR_labyrinth_rift_event.33.b: "$MAR_labyrinth_rift_event.1.b$" #event.32
+ MAR_labyrinth_rift_event.33.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+
+ #left-3 - wrong
+ MAR_labyrinth_rift_event.41.name: "Another Hallway"
+ MAR_labyrinth_rift_event.41.desc: "We ventured into the left hallway. If we were not keeping track of our path, we would easily get lost here. All the pathways seemed identical, and the length of each hallway almost made one forget from which direction they came.\nSlowly we started seeing another splitting of the hallways in the distance. Unsurprisingly, each hallway again looked identical. We groaned in frustration, ready to once again choose a path to take. \n\nWhat we did not notice was that the noise..the thud.. got faster, and ever so sligthly louder."
+ MAR_labyrinth_rift_event.41.a: "$MAR_labyrinth_rift_event.1.a$" #event.51
+ MAR_labyrinth_rift_event.41.b: "$MAR_labyrinth_rift_event.1.b$" #event.52
+ MAR_labyrinth_rift_event.41.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+ #right-3 - correct
+ MAR_labyrinth_rift_event.42.name: "$MAR_labyrinth_rift_event.41.name$"
+ MAR_labyrinth_rift_event.42.desc: "$MAR_labyrinth_rift_event.41.desc$"
+ MAR_labyrinth_rift_event.42.a: "$MAR_labyrinth_rift_event.1.a$" #event.51
+ MAR_labyrinth_rift_event.42.b: "$MAR_labyrinth_rift_event.1.b$" #event.52
+ MAR_labyrinth_rift_event.42.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+
+ #left-4 - correct
+ MAR_labyrinth_rift_event.51.name: "A Labyrinth?"
+ MAR_labyrinth_rift_event.51.desc: "At this point it was clear to us that we found ourselves in a labyrinth. However, reality did not seem to follow our know rules here. Our estimations of the layout of the labyrinth showed hallways crossing where we only found solid walls. It was almost as if each hallway was on a different level of reality. \nOccupied in the discussion about the layout of this labyrinth, we did not notice the next divergence until [Leader.GetName] informed us about it. As all other ones before, these hallways looked identical to the ones we came from.\nPerhaps we were going in circles? Or was it all the same hallway?\nDiscussion once again flared up, underlined by the rhythmic thudding noise vibrating from the walls.\n\nUntil it paused. And then sped up, more and more, louder and louder. It came closer. We needed to choose a path!"
+ MAR_labyrinth_rift_event.51.a: "$MAR_labyrinth_rift_event.1.a$" #event.61
+ MAR_labyrinth_rift_event.51.b: "$MAR_labyrinth_rift_event.1.b$" #event.62
+ MAR_labyrinth_rift_event.51.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+ #right-4 - wrong
+ MAR_labyrinth_rift_event.52.name: "$MAR_labyrinth_rift_event.51.name$"
+ MAR_labyrinth_rift_event.52.desc: "$MAR_labyrinth_rift_event.51.desc$"
+ MAR_labyrinth_rift_event.52.a: "$MAR_labyrinth_rift_event.1.a$" #event.62
+ MAR_labyrinth_rift_event.52.b: "$MAR_labyrinth_rift_event.1.b$" #event.62
+ MAR_labyrinth_rift_event.52.c: "$MAR_labyrinth_rift_event.21.c$" #instant death - Go to event.2
+
+
+ #left-5 - HAPPY ENDING
+ MAR_labyrinth_rift_event.61.name: "The Final Chamber"
+ MAR_labyrinth_rift_event.61.desc: "After this turn, we found ourselves in what we thought to be a dead-end. The anxiety was palpable, the thudding noise was so close, it may as well have been right behind us!\nAs we approached the wall, some of the bricks started to glow. Slowly, the light formed what appeared to be a doorway. With a faint whirring noise, the glow solidified into a white shape. It was the only noise in otherwise complete silence.\n\nSilence?\nThe thudding had stopped.\n\nThe light seemed to disappear, giving way to a pathway into a room.\nIn the middle of the room was a single pedestal. We approached the pedestal, trying to get a better view on what was displayed on it. \nIt looked almost like a crystal, yet at the same time its shape kept reforming. Whatever it is, it was fascinating.\n\nWe must take it back for analysis!"
+ MAR_labyrinth_rift_event.61.a: "What a find!"
+
+ #right-5 - slow death
+ MAR_labyrinth_rift_event.62.name: "The Source of the Thud"
+ MAR_labyrinth_rift_event.62.desc: "Since the last divergence of the path, the §Rnoise§! was right behind us. The torches were flickering one last time before the fire abruptly faded. Before we could even turn on the lights of the sphere, the video feed of the sphere cut out.\nOur faces were pale as we listened to the screams of fear and pain from [Leader.GetName]. We tried to pull the sphere out, but somehow it seemed stuck.\nSuddenly the screams stopped. There was only deafening silence. \nAnd then there was a growl.\nSome of us fainted as we heard the noise.\nThe camera feed turned back on. What we saw there was-\n\n §YRecording corrupted.\n Data beyond repair.\n Rec cOrdING cORRupTe D.§!"
+ MAR_labyrinth_rift_event.62.a: "What?"
+
+ #Instant death event
+ MAR_labyrinth_rift_event.2.name: "Cut Chords"
+ MAR_labyrinth_rift_event.2.desc: "[Leader.GetName] turned back. After a few minutes, the thudding stopped.\n\nAnd then it sped up. And sped up. And became louder, and closer, and louder, and...\n\nNone of our communications can reach [Leader.GetName]. As they ventured back, the camera feed cut out first. We wish the audio feed cut first.\nThe screams.. the terrified screams of [Leader.GetName] will not leave our minds any time soon. \nWe tried pulling the sphere out, but all that returned was a fringed end of the anchor.\nThe sphere was lost, and [Leader.GetName] with it."
+ MAR_labyrinth_rift_event.2.a: "Terrifying"
+
+
  # trait
  MAR_leader_trait_stairs: "Ascended"
  MAR_leader_trait_stairs_desc: "This leader has braved the infinite ascend and has attained knowledge from beyond this world."

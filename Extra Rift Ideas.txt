@@ -44,4 +44,9 @@ New ideas:
             - Options to go left/right/leave on each step
             - A loud thumping noise comes closer for every step
             - If final room is not reached in 5 steps, the scientist is killed by whatever made the noise
-            - Final room has a reward, potentially something like an
+            - Final room has a reward, resources? empire modifier?
+        - On second explore:
+            - Same empire (only if not priorly finished)
+                - Can attempt again etc
+            - New empire (only if not priorly finished)
+                - Can attempt as well
